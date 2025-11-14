@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Website with Ad Ring</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .page-wrapper {
+            max-width: 1800px;
+            margin: 0 auto;
+            min-height: calc(100vh - 40px); /* full height minus body padding */
+            display: grid;
+            grid-template-rows: auto 1fr auto; /* top ads, middle, bottom ads */
+            gap: 20px;
+        }
+
+        /* Top and Bottom ad rows */
+        .ads-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* Middle area with left ads, center game, right ads */
+        .middle-row {
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr) auto; /* left ads, center, right ads */
+            gap: 20px;
+            align-items: stretch; /* make center container stretch full height */
+        }
+
+        .ads-col {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .ad-box {
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block;
+        }
+
+        .ad-box:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+        }
+
+        .ad-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .center-container {
+            background: rgba(255, 255, 255, 0.98);
+            border: 4px solid #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            overflow-y: auto;   /* scroll inside */
+            height: 100%;       /* fill entire middle row vertically */
+        }
+
+        .center-title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .inner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .inner-item {
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .inner-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container {
+            width: 100%;
+            height: 160px;
+            display: block;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.1);
+        }
+
+        .content {
+            padding: 15px;
+        }
+
+        .item-title {
+            color: #333;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .item-description {
+            color: #666;
+            line-height: 1.5;
+            font-size: 0.9em;
+        }
+
+        /* Make it a bit nicer on small screens */
+        @media (max-width: 900px) {
+            .page-wrapper {
+                grid-template-rows: auto auto auto;
+            }
+
+            .middle-row {
+                grid-template-columns: 1fr;
+            }
+
+            .ads-col {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .ad-box {
+                width: 80px;
+                height: 80px;
+            }
+
+            .center-container {
+                height: auto;
+                max-height: 70vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+
+        <!-- TOP ROW: 25 ads -->
+        <div class="ads-row">
+            <a href="https://example.com/1" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/KCF-Holidays/raw/main/Holiday-1.png" alt="Ad 1">
+            </a>
+            <a href="https://example.com/2" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=2" alt="Ad 2">
+            </a>
+            <a href="https://example.com/3" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=3" alt="Ad 3">
+            </a>
+            <a href="https://example.com/4" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=4" alt="Ad 4">
+            </a>
+            <a href="https://example.com/5" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=5" alt="Ad 5">
+            </a>
+            <a href="https://example.com/6" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=6" alt="Ad 6">
+            </a>
+            <a href="https://example.com/7" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=7" alt="Ad 7">
+            </a>
+            <a href="https://example.com/8" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=8" alt="Ad 8">
+            </a>
+            <a href="https://example.com/9" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=9" alt="Ad 9">
+            </a>
+            <a href="https://example.com/10" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=10" alt="Ad 10">
+            </a>
+            <a href="https://example.com/11" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=11" alt="Ad 11">
+            </a>
+            <a href="https://example.com/12" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/KCF-Holidays/raw/main/Holiday-1.png" alt="Ad 12">
+            </a>
+            <a href="https://example.com/13" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=13" alt="Ad 13">
+            </a>
+            <a href="https://example.com/14" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=14" alt="Ad 14">
+            </a>
+            <a href="https://example.com/15" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/KCF-Holidays/raw/main/Holiday-1.png">
+            </a>
+            <a href="https://example.com/16" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=16" alt="Ad 16">
+            </a>
+            <a href="https://example.com/17" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/KCF-Holidays/raw/main/Holiday-1.png" alt="Ad 17">
+            </a>
+            <a href="https://example.com/18" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=18" alt="Ad 18">
+            </a>
+            <a href="https://example.com/19" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=19" alt="Ad 19">
+            </a>
+            <a href="https://example.com/20" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=20" alt="Ad 20">
+            </a>
+            <a href="https://example.com/21" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=21" alt="Ad 21">
+            </a>
+            <a href="https://example.com/22" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=22" alt="Ad 22">
+            </a>
+            <a href="https://example.com/23" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=23" alt="Ad 23">
+            </a>
+            <a href="https://example.com/24" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=24" alt="Ad 24">
+            </a>
+            <a href="https://example.com/25" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=25" alt="Ad 25">
+                </a>
+            <a href="https://example.com/25" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=25" alt="Ad 25">
+                </a>
+            <a href="https://example.com/25" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=25" alt="Ad 25">
+                </a>
+            <a href="https://example.com/25" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=25" alt="Ad 25">
+                </a>
+            <a href="https://example.com/25" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=25" alt="Ad 25">
+                </a>
+            <a href="https://example.com/25" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=25" alt="Ad 25">
+                </a>
+            <a href="https://example.com/25" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=25" alt="Ad 25">
+            </a>
+        </div>
+
+        <!-- MIDDLE ROW: left ads, center game, right ads -->
+        <div class="middle-row">
+            <!-- LEFT COLUMN: 25 ads -->
+            <div class="ads-col">
+                <a href="https://example.com/26" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=26" alt="Ad 26">
+                </a>
+                <a href="https://example.com/27" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=27" alt="Ad 27">
+                </a>
+                <a href="https://example.com/28" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=28" alt="Ad 28">
+                </a>
+                <a href="https://example.com/29" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=29" alt="Ad 29">
+                </a>
+                <a href="https://example.com/30" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=30" alt="Ad 30">
+                </a>
+                <a href="https://example.com/31" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=31" alt="Ad 31">
+                </a>
+                <a href="https://example.com/32" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=32" alt="Ad 32">
+                </a>
+                <a href="https://example.com/33" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=33" alt="Ad 33">
+                </a>
+                <a href="https://example.com/34" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=34" alt="Ad 34">
+                </a>
+                <a href="https://example.com/35" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=35" alt="Ad 35">
+                </a>
+                <a href="https://example.com/36" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=36" alt="Ad 36">
+                </a>
+                <a href="https://example.com/37" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=37" alt="Ad 37">
+                </a>
+                <a href="https://example.com/38" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=38" alt="Ad 38">
+                </a>
+                <a href="https://example.com/39" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=39" alt="Ad 39">
+                </a>
+                <a href="https://example.com/40" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=40" alt="Ad 40">
+                </a>
+                <a href="https://example.com/41" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=41" alt="Ad 41">
+                </a>
+                <a href="https://example.com/42" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=42" alt="Ad 42">
+                </a>
+                <a href="https://example.com/43" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=43" alt="Ad 43">
+                </a>
+                <a href="https://example.com/44" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=44" alt="Ad 44">
+                </a>
+                <a href="https://example.com/45" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=45" alt="Ad 45">
+                </a>
+                <a href="https://example.com/46" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=46" alt="Ad 46">
+                </a>
+                <a href="https://example.com/47" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=47" alt="Ad 47">
+                </a>
+                <a href="https://example.com/48" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=48" alt="Ad 48">
+                </a>
+                <a href="https://example.com/49" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=49" alt="Ad 49">
+                </a>
+                <a href="https://example.com/50" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=50" alt="Ad 50">
+                </a>
+            </div>
+
+            <!-- CENTER: Your game / gallery -->
+            <div class="center-container">
+                <h1 class="center-title">Your Game Goes Here</h1>
+                <div class="inner-grid">
+                    <!-- Example main game card: replace with iframe or actual game -->
+                    <div class="inner-item">
+                        <a href="#" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/4ECDC4/ffffff?text=Game+Preview" alt="Game Preview">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Game</h2>
+                            <p class="item-description">
+                                Replace this section with your actual game embed. You can use an iframe, a canvas, or any other game container here.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Extra sample slots (optional) -->
+                    <div class="inner-item">
+                        <a href="https://example.com/inner2" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/45B7D1/ffffff?text=Featured+2" alt="Featured 2">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 2</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://github.com/TitanBusinessPros/KCF-Holidays/raw/main/Holiday-1.png" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
+                        <a href="https://example.com/inner3" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/96CEB4/ffffff?text=Featured+3" alt="Featured 3">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 3</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+
+                    <div class="inner-item">
+                        <a href="https://example.com/inner4" class="image-container">
+                            <img loading="lazy" src="https://via.placeholder.com/300x200/FFEAA7/333333?text=Featured+4" alt="Featured 4">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Featured Title 4</h2>
+                            <p class="item-description">Add your description text here. This is a placeholder paragraph for the featured item.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: 25 ads -->
+            <div class="ads-col">
+                <a href="https://example.com/51" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=51" alt="Ad 51">
+                </a>
+                <a href="https://example.com/52" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=52" alt="Ad 52">
+                </a>
+                <a href="https://example.com/53" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=53" alt="Ad 53">
+                </a>
+                <a href="https://example.com/54" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=54" alt="Ad 54">
+                </a>
+                <a href="https://example.com/55" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=55" alt="Ad 55">
+                </a>
+                <a href="https://example.com/56" class="ad-box">
+                    <img loading="lazy" src="https://github.com/TitanBusinessPros/KCF-Holidays/raw/main/Holiday-1.png" alt="Ad 56">
+                </a>
+                <a href="https://example.com/57" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=57" alt="Ad 57">
+                </a>
+                <a href="https://example.com/58" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=58" alt="Ad 58">
+                </a>
+                <a href="https://example.com/59" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=59" alt="Ad 59">
+                </a>
+                <a href="https://example.com/60" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=60" alt="Ad 60">
+                </a>
+                <a href="https://example.com/61" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=61" alt="Ad 61">
+                </a>
+                <a href="https://example.com/62" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=62" alt="Ad 62">
+                </a>
+                <a href="https://example.com/63" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=63" alt="Ad 63">
+                </a>
+                <a href="https://example.com/64" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=64" alt="Ad 64">
+                </a>
+                <a href="https://example.com/65" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=65" alt="Ad 65">
+                </a>
+                <a href="https://example.com/66" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=66" alt="Ad 66">
+                </a>
+                <a href="https://example.com/67" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=67" alt="Ad 67">
+                </a>
+                <a href="https://example.com/68" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=68" alt="Ad 68">
+                </a>
+                <a href="https://example.com/69" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=69" alt="Ad 69">
+                </a>
+                <a href="https://example.com/70" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=70" alt="Ad 70">
+                </a>
+                <a href="https://example.com/71" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=71" alt="Ad 71">
+                </a>
+                <a href="https://example.com/72" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=72" alt="Ad 72">
+                </a>
+                <a href="https://example.com/73" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=73" alt="Ad 73">
+                </a>
+                <a href="https://example.com/74" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=74" alt="Ad 74">
+                </a>
+                <a href="https://example.com/75" class="ad-box">
+                    <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=75" alt="Ad 75">
+                </a>
+            </div>
+        </div>
+
+        <!-- BOTTOM ROW: 25 ads -->
+        <div class="ads-row">
+            <a href="https://example.com/76" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=76" alt="Ad 76">
+            </a>
+            <a href="https://example.com/77" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=77" alt="Ad 77">
+            </a>
+            <a href="https://example.com/78" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=78" alt="Ad 78">
+            </a>
+            <a href="https://example.com/79" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=79" alt="Ad 79">
+            </a>
+            <a href="https://example.com/80" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=80" alt="Ad 80">
+            </a>
+            <a href="https://example.com/81" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=81" alt="Ad 81">
+            </a>
+            <a href="https://example.com/82" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=82" alt="Ad 82">
+            </a>
+            <a href="https://example.com/83" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=83" alt="Ad 83">
+            </a>
+            <a href="https://example.com/84" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=84" alt="Ad 84">
+            </a>
+            <a href="https://example.com/85" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=85" alt="Ad 85">
+            </a>
+            <a href="https://example.com/86" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=86" alt="Ad 86">
+            </a>
+            <a href="https://example.com/87" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=87" alt="Ad 87">
+            </a>
+            <a href="https://example.com/88" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=88" alt="Ad 88">
+            </a>
+            <a href="https://example.com/89" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=89" alt="Ad 89">
+            </a>
+            <a href="https://example.com/90" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=90" alt="Ad 90">
+            </a>
+            <a href="https://example.com/91" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=91" alt="Ad 91">
+            </a>
+            <a href="https://example.com/92" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=92" alt="Ad 92">
+            </a>
+            <a href="https://example.com/93" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=93" alt="Ad 93">
+            </a>
+            <a href="https://example.com/94" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=94" alt="Ad 94">
+            </a>
+            <a href="https://example.com/95" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=95" alt="Ad 95">
+            </a>
+            <a href="https://example.com/96" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=96" alt="Ad 96">
+            </a>
+            <a href="https://example.com/97" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=97" alt="Ad 97">
+            </a>
+            <a href="https://example.com/98" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=98" alt="Ad 98">
+            </a>
+            <a href="https://example.com/99" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=99" alt="Ad 99">
+            </a>
+            <a href="https://example.com/100" class="ad-box">
+                <img loading="lazy" src="https://via.placeholder.com/150/FF6B6B/ffffff?text=100" alt="Ad 100">
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>
