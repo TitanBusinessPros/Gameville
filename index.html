@@ -67,22 +67,59 @@
         /* Header Styles */
         .site-header {
             text-align: center;
-            padding: 20px;
+            padding: 10px 20px 5px;
             background: rgba(255, 255, 255, 0.95);
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .header-logo {
             max-width: 300px;
             height: auto;
-            margin-bottom: 15px;
+            transition: all 0.5s ease;
+            cursor: pointer;
+            /* Initial animation */
+            animation: float 3s ease-in-out infinite;
+            margin-bottom: 5px;
+        }
+
+        .header-logo:hover {
+            animation-play-state: paused;
         }
 
         .header-title {
             color: #333;
             font-size: 2.2em;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+            margin: 0;
+        }
+
+        .daily-message {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: #333;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 5px;
+            font-size: 1.1em;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Logo animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
         }
 
         /* Footer Styles */
@@ -250,6 +287,29 @@
             font-size: 0.9em;
         }
 
+        /* Music control */
+        .music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .music-control:hover {
+            background: rgba(0, 0, 0, 0.9);
+            transform: scale(1.1);
+        }
+
         /* Make it a bit nicer on small screens */
         @media (max-width: 900px) {
             .page-wrapper {
@@ -285,16 +345,37 @@
                 flex-direction: column;
                 gap: 10px;
             }
+
+            .header-title {
+                font-size: 1.8em;
+            }
+
+            .daily-message {
+                font-size: 1em;
+                padding: 6px 12px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Background Music -->
+    <audio id="background-music" loop>
+        <source src="https://github.com/TitanBusinessPros/Gameville/raw/main/Gameville%20Dreams.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <!-- Music Control -->
+    <div class="music-control" id="music-toggle">
+        <i class="fas fa-music"></i>
+    </div>
+
     <div class="page-wrapper">
 
         <!-- HEADER SECTION -->
         <header class="site-header">
-            <img src="https://github.com/TitanBusinessPros/Gameville/raw/main/Gameville-logo-1.png" alt="Gameville Logo" class="header-logo">
+            <img src="https://github.com/TitanBusinessPros/Gameville/raw/main/Gameville-logo-1.png" alt="Gameville Logo" class="header-logo" id="logo">
             <h1 class="header-title">Discover Oklahoma City's Newest Gaming Platform!</h1>
+            <div class="daily-message">Check back daily for new games!</div>
         </header>
 
         <!-- TOP ROW: 30 ads -->
@@ -489,6 +570,16 @@
                     </div>
                     
                     <div class="inner-item">
+                        <a href="https://titanbusinesspros.github.io/Frisbee-Golf/" class="image-container">
+                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Frisbee-Golf/raw/main/Frisbee%20Golf%20Logo%202.png" alt="Chess">
+                        </a>
+                        <div class="content">
+                            <h2 class="item-title">Frisbee Golf</h2>
+                            <p class="item-description">This is the start of our Frisbee Golf Game! We will add custom sprites in the future. Enjoy playing with a friend or one player.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Checkers-Game/" class="image-container">
                             <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/CheckersLogo.png" alt="Checkers">
                         </a>
@@ -668,17 +759,7 @@
                             <p class="item-description">This is a one player or two player golf game with 24 holes. Not tested for mobile but works great on computer!.</p>
                         </div>
                     </div>
-                    
-                     <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Space-Turkey/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Space-Turkey/raw/main/Space%20Turkey%20Game%20Logo.png" alt="Featured 3">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Space Turkey</h2>
-                            <p class="item-description">This is a one player endless runner game. Avoid being a turkey dinner and jump over the kitchen table as it heads your way. Not tested for mobile.</p>
-                        </div>
-                    </div>
-                    
+              
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Space-Word-Mission/" class="image-container">
                             <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Space%20Word%20Mission%20Logo.png" alt="Featured 3">
@@ -866,5 +947,117 @@
         </footer>
 
     </div>
+
+    <script>
+        // Make the logo interactive with mouse movement
+        const logo = document.getElementById('logo');
+        let isDragging = false;
+        let offsetX, offsetY;
+
+        // Mouse events for dragging
+        logo.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            offsetX = e.clientX - logo.getBoundingClientRect().left;
+            offsetY = e.clientY - logo.getBoundingClientRect().top;
+            logo.style.cursor = 'grabbing';
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                const x = e.clientX - offsetX;
+                const y = e.clientY - offsetY;
+                
+                // Keep the logo within the header boundaries
+                const header = document.querySelector('.site-header');
+                const headerRect = header.getBoundingClientRect();
+                const logoRect = logo.getBoundingClientRect();
+                
+                const maxX = headerRect.width - logoRect.width;
+                const maxY = headerRect.height - logoRect.height;
+                
+                const boundedX = Math.max(0, Math.min(x, maxX));
+                const boundedY = Math.max(0, Math.min(y, maxY));
+                
+                logo.style.position = 'absolute';
+                logo.style.left = `${boundedX}px`;
+                logo.style.top = `${boundedY}px`;
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            logo.style.cursor = 'grab';
+        });
+
+        // Touch events for mobile devices
+        logo.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            const touch = e.touches[0];
+            offsetX = touch.clientX - logo.getBoundingClientRect().left;
+            offsetY = touch.clientY - logo.getBoundingClientRect().top;
+        });
+
+        document.addEventListener('touchmove', (e) => {
+            if (isDragging) {
+                const touch = e.touches[0];
+                const x = touch.clientX - offsetX;
+                const y = touch.clientY - offsetY;
+                
+                // Keep the logo within the header boundaries
+                const header = document.querySelector('.site-header');
+                const headerRect = header.getBoundingClientRect();
+                const logoRect = logo.getBoundingClientRect();
+                
+                const maxX = headerRect.width - logoRect.width;
+                const maxY = headerRect.height - logoRect.height;
+                
+                const boundedX = Math.max(0, Math.min(x, maxX));
+                const boundedY = Math.max(0, Math.min(y, maxY));
+                
+                logo.style.position = 'absolute';
+                logo.style.left = `${boundedX}px`;
+                logo.style.top = `${boundedY}px`;
+                
+                e.preventDefault(); // Prevent scrolling while dragging
+            }
+        });
+
+        document.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+
+        // Background music functionality
+        const backgroundMusic = document.getElementById('background-music');
+        const musicToggle = document.getElementById('music-toggle');
+        let musicStarted = false;
+
+        // Function to start music
+        function startMusic() {
+            if (!musicStarted) {
+                backgroundMusic.play().then(() => {
+                    musicStarted = true;
+                    musicToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
+                }).catch(error => {
+                    console.log('Audio play failed:', error);
+                });
+            }
+        }
+
+        // Event listeners for user interaction
+        document.addEventListener('touchstart', startMusic, { once: true });
+        document.addEventListener('scroll', startMusic, { once: true });
+        document.addEventListener('click', startMusic, { once: true });
+
+        // Toggle music on/off
+        musicToggle.addEventListener('click', function() {
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();
+                musicToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
+            } else {
+                backgroundMusic.pause();
+                musicToggle.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            }
+        });
+    </script>
 </body>
 </html>
