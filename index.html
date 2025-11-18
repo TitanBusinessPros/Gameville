@@ -38,6 +38,9 @@
     <!-- Standard Meta Tags -->
     <meta name="description" content="Free online game play with no hassles! No downloads or sign-ups! Just pure awesome gameplay!">
     
+    <!-- Font Awesome for Facebook icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         * {
             margin: 0;
@@ -57,8 +60,76 @@
             margin: 0 auto;
             min-height: calc(100vh - 40px);
             display: grid;
-            grid-template-rows: auto 1fr auto;
+            grid-template-rows: auto auto 1fr auto auto;
             gap: 20px;
+        }
+
+        /* Header Styles */
+        .site-header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-logo {
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .header-title {
+            color: #333;
+            font-size: 2.2em;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        /* Footer Styles */
+        .site-footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .footer-copyright {
+            font-size: 1em;
+            margin-bottom: 10px;
+            flex: 1;
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex: 2;
+        }
+
+        .footer-social-link {
+            color: white;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social-link:hover {
+            color: #3b5998; /* Facebook blue */
+        }
+
+        .footer-phone, .footer-email {
+            font-size: 1em;
         }
 
         /* Top and Bottom ad rows */
@@ -204,11 +275,27 @@
                 height: auto;
                 max-height: 70vh;
             }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .footer-contact {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="page-wrapper">
+
+        <!-- HEADER SECTION -->
+        <header class="site-header">
+            <img src="https://github.com/TitanBusinessPros/Gameville/raw/main/Gameville-logo-1.png" alt="Gameville Logo" class="header-logo">
+            <h1 class="header-title">Discover Oklahoma City's Newest Gaming Platform!</h1>
+        </header>
 
         <!-- TOP ROW: 30 ads -->
         <div class="ads-row">
@@ -763,6 +850,20 @@
                 <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 105">
             </a>
         </div>
+
+        <!-- FOOTER SECTION -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-copyright">Copyright 2025 Titan Business Pros LLC</div>
+                <div class="footer-contact">
+                    <a href="https://www.facebook.com/TitanBusinessPros/" class="footer-social-link" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <span class="footer-phone">405-998-7979</span>
+                    <span class="footer-email">titanbusinesspros@gmail.com</span>
+                </div>
+            </div>
+        </footer>
 
     </div>
 </body>
