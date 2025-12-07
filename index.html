@@ -69,7 +69,7 @@
             margin: 0 auto;
             min-height: calc(100vh - 40px);
             display: grid;
-            grid-template-rows: auto auto 1fr auto;
+            grid-template-rows: auto auto 1fr auto auto;
             gap: 20px;
         }
 
@@ -178,12 +178,43 @@
             font-size: 1em;
         }
 
-        /* Middle area - single center container */
+        /* Middle area - single column for games */
         .middle-row {
             display: grid;
             grid-template-columns: 1fr;
             gap: 20px;
             align-items: stretch;
+        }
+
+        /* Top and Bottom ad rows */
+        .ads-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .ad-box {
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block;
+        }
+
+        .ad-box:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+        }
+
+        .ad-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .center-container {
@@ -334,10 +365,6 @@
 
         /* Make it a bit nicer on small screens */
         @media (max-width: 900px) {
-            .page-wrapper {
-                grid-template-rows: auto auto auto;
-            }
-
             .center-container {
                 height: auto;
                 max-height: 70vh;
@@ -360,6 +387,11 @@
             .daily-message {
                 font-size: 1em;
                 padding: 6px 12px;
+            }
+
+            .ad-box {
+                width: 80px;
+                height: 80px;
             }
         }
     </style>
@@ -385,7 +417,102 @@
             <div class="daily-message">Check back daily for new games!</div>
         </header>
 
+        <!-- TOP ROW: 30 ads -->
+        <div class="ads-row">
+            <a href="https://www.singanewpsalm.church/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville/raw/main/SANS.png" alt="Ad 1">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 2">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 3">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 4">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 5">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 6">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 7">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 8">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 9">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 10">
+             </a>
+            <a href="https://www.theopenchurchproject.org/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville/raw/main/OCP.png" alt="Ad 12">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 10">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 13">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 14">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 15">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 16">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 17">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 18">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 19">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 20">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 21">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 22">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 23">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 24">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 25">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 26">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 27">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 28">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 29">
+            </a>
+            <a href="https://www.okiewebsiteguy.com/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Titan%20Logo-2.png" alt="Ad 30">
+            </a>
+        </div>
+
         <!-- CENTER: Your game / gallery -->
+        <!-- MIDDLE ROW: center games only -->
         <div class="middle-row">
             <div class="center-container">
                 <h1 class="center-title">Welcome To Gameville</h1>
@@ -399,7 +526,7 @@
                         </a>
                         <div class="content">
                             <h2 class="item-title">Zombie Outbreak Honolulu</h2>
-                            <p class="item-description">Zombie Outbreak Honolulu: Christmas Edition is a ruthless 10-stage survival game with over 10 brutal bosses and a deadly holiday theme. You must kill 1,000 zombies and defeat three bosses in the final stage, earning lives only by beating bosses and starting with just five lives that carry over, so don't expect any mercy. Most players won't survive—think you can?</p>
+                            <p class="item-description">We are currently testing & modifying this game. Check back soon for official deployment!</p>
                         </div>
                     </div>
 
@@ -759,6 +886,85 @@
             </div>
         </div>
 
+        <!-- BOTTOM ROW: 25 ads -->
+        <div class="ads-row">
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 81">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 82">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 83">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 84">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 85">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 86">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 87">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 88">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 89">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 90">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 91">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 92">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 93">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 94">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 95">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 96">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 97">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 98">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 99">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 100">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 101">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 102">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 103">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 104">
+            </a>
+            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
+                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 105">
+            </a>
+        </div>
+
         <!-- FOOTER SECTION -->
         <footer class="site-footer">
             <div class="footer-content">
@@ -774,7 +980,7 @@
                         <i class="fab fa-youtube"></i>
                     </a>
                     <span class="footer-phone">(405) 998-7979</span>
-                    <span class="footer-email">titanbusinesspros@gmail.com</span>
+                    <span class="footer-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b7c3dec3d6d9d5c2c4ded9d2c4c4c7c5d8c4f7d0dad6dedb99d4d8da">[email&#160;protected]</a></span>
                 </div>
                 <div class="footer-bottom">
                     <div class="footer-address"></div>
@@ -785,7 +991,7 @@
 
     </div>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Image optimization and lazy loading
         document.addEventListener('DOMContentLoaded', function() {
             // Lazy load images
