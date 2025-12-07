@@ -16,6 +16,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gameville - Free Online Games</title>
     
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://github.com/TitanBusinessPros/Gameville/raw/main/Gameville-logo-1.png" as="image">
+    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Gameville-Favicon.png">
     
@@ -53,6 +56,12 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .page-wrapper {
@@ -60,7 +69,7 @@
             margin: 0 auto;
             min-height: calc(100vh - 40px);
             display: grid;
-            grid-template-rows: auto auto 1fr auto auto;
+            grid-template-rows: auto auto 1fr auto;
             gap: 20px;
         }
 
@@ -169,50 +178,12 @@
             font-size: 1em;
         }
 
-        /* Top and Bottom ad rows */
-        .ads-row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        /* Middle area with left ads, center game, right ads */
+        /* Middle area - single center container */
         .middle-row {
             display: grid;
-            grid-template-columns: auto minmax(0, 1fr) auto;
+            grid-template-columns: 1fr;
             gap: 20px;
             align-items: stretch;
-        }
-
-        .ads-col {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .ad-box {
-            width: 100px;
-            height: 100px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: block;
-        }
-
-        .ad-box:hover {
-            transform: scale(1.08);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-        }
-
-        .ad-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
         }
 
         .center-container {
@@ -257,6 +228,8 @@
             height: 160px;
             display: block;
             overflow: hidden;
+            background: #f5f5f5;
+            position: relative;
         }
 
         .image-container img {
@@ -264,6 +237,12 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-container img.loaded {
+            opacity: 1;
         }
 
         .image-container:hover img {
@@ -285,6 +264,27 @@
             color: #666;
             line-height: 1.5;
             font-size: 0.9em;
+        }
+
+        /* Loading placeholder */
+        .image-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
         }
 
         /* Music control */
@@ -310,25 +310,32 @@
             transform: scale(1.1);
         }
 
+        /* Footer additions */
+        .footer-bottom {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+        }
+
+        .footer-address, .footer-website {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+
+        .footer-website {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-website:hover {
+            text-decoration: underline;
+        }
+
         /* Make it a bit nicer on small screens */
         @media (max-width: 900px) {
             .page-wrapper {
                 grid-template-rows: auto auto auto;
-            }
-
-            .middle-row {
-                grid-template-columns: 1fr;
-            }
-
-            .ads-col {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .ad-box {
-                width: 80px;
-                height: 80px;
             }
 
             .center-container {
@@ -378,679 +385,378 @@
             <div class="daily-message">Check back daily for new games!</div>
         </header>
 
-        <!-- TOP ROW: 30 ads -->
-        <div class="ads-row">
-            <a href="https://www.singanewpsalm.church/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville/raw/main/SANS.png" alt="Ad 1">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 2">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 3">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 4">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 5">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 6">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 7">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 8">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 9">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 10">
-             </a>
-            <a href="https://www.theopenchurchproject.org/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville/raw/main/OCP.png" alt="Ad 12">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 10">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 13">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 14">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 15">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 16">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 17">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 18">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 19">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 20">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 21">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 22">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 23">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 24">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 25">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 26">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 27">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 28">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 29">
-            </a>
-            <a href="https://www.okiewebsiteguy.com/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Titan%20Logo-2.png" alt="Ad 30">
-            </a>
-        </div>
-
-        <!-- MIDDLE ROW: left ads, center game, right ads -->
+        <!-- CENTER: Your game / gallery -->
         <div class="middle-row">
-            <!-- LEFT COLUMN: 25 ads -->
-            <div class="ads-col">
-                <a href="https://titanbusinesspros.github.io/Ed-Game-Pricing/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Ed-Game-Pricing/raw/main/Education%20Games%20Ad-1.png" alt="Ad 31">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 32">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 33">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 34">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 35">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 36">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 37">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 38">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 39">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 40">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 41">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 42">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 43">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 44">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 45">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 46">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 47">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 48">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 49">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 50">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 51">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 52">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 53">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 54">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 55">
-                </a>
-            </div>
-
-            <!-- CENTER: Your game / gallery -->
             <div class="center-container">
                 <h1 class="center-title">Welcome To Gameville</h1>
                 <div class="inner-grid">
-                    <!-- Example main game card: replace with iframe or actual game -->
+                    <!-- All games with lazy loading -->
+
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Zombie-Outbreak-Honolulu/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/ZOH-Logo%203.png" alt="Chess">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/ZOH-Logo%203.png" alt="Zombie Outbreak Honolulu">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Zombie Outbreak Honolulu</h2>
-                            <p class="item-description">We are currently testing & modifying this game. Check back soon for official deployment!</p>
+                            <p class="item-description">Zombie Outbreak Honolulu: Christmas Edition is a ruthless 10-stage survival game with over 10 brutal bosses and a deadly holiday theme. You must kill 1,000 zombies and defeat three bosses in the final stage, earning lives only by beating bosses and starting with just five lives that carry over, so don't expect any mercy. Most players won't survive—think you can?</p>
                         </div>
                     </div>
 
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Chess-Game/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Chess%20Logo.png" alt="Chess">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Chess%20Logo.png" alt="Chess">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Chess</h2>
-                            <p class="item-description">Test your skills in a game of Chess. Play two player or have fun playing against the AI! Good for mobile play!</p>
+                            <p class="item-description">Test your skills in a challenging game of Chess. You can play with a friend in two-player mode for a classic head-to-head match. If you prefer solo gameplay, the built-in AI is ready to take you on. The game also runs smoothly on mobile, making it easy to play anywhere.</p>
                         </div>
                     </div>
                     
-                      <div class="inner-item">
+                    <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Navy-War1/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Navy-War1/raw/main/Navy%20War-1%20Logo.png" alt="Chess">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Navy-War1/raw/main/Navy%20War-1%20Logo.png" alt="Navy War-1">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Navy War-1</h2>
-                            <p class="item-description">Compete against AI in this strategy war game. Gain one submarine every five moves and use your five jets to take out the enemy! Not yet tested for any device.</p>
+                            <p class="item-description">Compete against a challenging AI opponent in this strategic war game. You'll earn one additional submarine every five moves to strengthen your forces. Use your fleet of five jets to strike the enemy and turn the tide of battle. The game is optimized for mobile play, giving you smooth performance on the go.</p>
                         </div>
                     </div>
                     
-                     <div class="inner-item">
+                    <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Air-Hockey/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Air-Hockey/raw/main/Air%20Hockey-Logo2.png" alt="Chess">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Air-Hockey/raw/main/Air%20Hockey-Logo2.png" alt="Air Hockey">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Air Hockey</h2>
-                            <p class="item-description">Enjoy a quick round of Air Hockey with this one player game. This game has not been tested for mobile use.</p>
+                            <p class="item-description">Enjoy a quick and exciting round of Air Hockey in this fast-paced solo game. The controls are simple, making it easy for anyone to jump in and start playing. Each match delivers quick action that keeps you on your toes. It's the perfect game when you want a fun challenge in just a few minutes.</p>
                         </div>
                     </div>
                     
-                     <div class="inner-item">
+                    <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Guide-The-Fly/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Guide-The-Fly/raw/main/Guide%20The%20Fly%20Logo.png" alt="Chess">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Guide-The-Fly/raw/main/Guide%20The%20Fly%20Logo.png" alt="Guide The Fly">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Guide The Fly</h2>
-                            <p class="item-description">Take the fly to the light! Guide The Fly through 12 stages! Not yet tested for mobile.</p>
+                            <p class="item-description">Take the fly on an exciting journey toward the light. You'll guide The Fly through twelve unique stages filled with obstacles. Each level becomes more challenging as you progress. Stay focused and help the little fly reach its final destination.</p>
                         </div>
                     </div>
                     
-                     <div class="inner-item">
+                    <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Sudoku-Game/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Sudoku-Game/raw/main/Sudoku-Logo.png" alt="Chess">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Sudoku-Game/raw/main/Sudoku-Logo.png" alt="Sudoku">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Sudoku</h2>
-                            <p class="item-description">Test your skills in a game of Sudoku. This is a one player game and not yet tested for mobile play. Enjoy some relaxing music while you play.</p>
+                            <p class="item-description">Test your skills in a classic game of Sudoku as you work through each puzzle. This experience is designed for a single player who enjoys thoughtful challenges. Relax and clear your mind while solving numbers at your own pace. Enjoy the calming background music that plays as you work through every grid.</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Neon-Drift/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/SSG-Image/raw/main/Neon%20Drift%20Logo.png" alt="Chess">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/SSG-Image/raw/main/Neon%20Drift%20Logo.png" alt="Neon Drift">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Neon Drift</h2>
-                            <p class="item-description">Get lost in collecting orbs in the Neon Drift! This is a one player game only. Not yet tested for mobile play.</p>
+                            <p class="item-description">Get lost in the thrilling world of Neon Drift as you race through vibrant environments. Collect glowing orbs to boost your score and keep the momentum going. The game is designed for a single player who loves fast-paced action. Enjoy the neon visuals and addictive gameplay as you drift through every level.</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Gravity-Sling/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gravity-Sling/raw/main/Gravity%20Sling%20Logo.png" alt="Chess">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gravity-Sling/raw/main/Gravity%20Sling%20Logo.png" alt="Gravity Sling">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Gravity Sling</h2>
-                            <p class="item-description">Test your skills in a game of Gravity Sling. Play one player only.Only playable on tablet & desktop.</p>
+                            <p class="item-description">Test your skills in the challenging game of Gravity Sling. Each level will put your math and problem-solving abilities to the test. You'll need to carefully plan every move to succeed. Can you master all the levels and prove your skills?</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Detective/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Detective/raw/main/Detective%20Logo.png" alt="Chess">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Detective/raw/main/Detective%20Logo.png" alt="Detective">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Detective</h2>
-                            <p class="item-description">Solve crimes in this one player murder mystery game. Take notes, interview witnesses, and solve cases. Multiple endings that are determined by choice.</p>
+                            <p class="item-description">Step into the role of a detective in this engaging murder mystery game. Take detailed notes and carefully interview witnesses to gather clues. Every choice you make can affect how the case unfolds. Multiple endings await, giving you a different experience with each playthrough.</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Dodge-Game/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Dodge-Game/raw/main/Dodge-Logo.png" alt="Chess">
-                            
-                             </a>
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Dodge-Game/raw/main/Dodge-Logo.png" alt="Dodge">
+                        </a>
                         <div class="content">
                             <h2 class="item-title">Dodge</h2>
-                            <p class="item-description">Try your skill and test your eye movement! Dodge the blocks as they gain speed! See if you can even pass 200 points! Not tested for mobile yet.</p>
+                            <p class="item-description">Think you have lightning-fast reflexes? Now is your chance to prove it! A plumber's worst nightmare comes to life as flying toilets rain down on you. They keep coming faster and faster, challenging your speed and agility.</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Desert-Rattler-/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Desert-Rattler-/raw/main/Desert%20Rattler%20Logo.png" alt="Chess">
-                            
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Desert-Rattler-/raw/main/Desert%20Rattler%20Logo.png" alt="Desert Rattler">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Desert Rattler</h2>
-                            <p class="item-description">Can you score 120 or higher? One player only.Good on mobile play!</p>
+                            <p class="item-description">Can you reach a score of 120 or higher? This exciting game is designed for a single player. Challenge yourself and see how high you can go. It's optimized for smooth mobile play, so you can enjoy it anywhere.</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Match-Time/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Match-Time/raw/main/Match%20Time%20Logo.png" alt="Chess">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Match-Time/raw/main/Match%20Time%20Logo.png" alt="Match Time">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Match Time</h2>
-                            <p class="item-description">Test the your skills at this matching game! One player only. Good for mobile play!</p>
+                            <p class="item-description">Test your skills in this fun and challenging matching game. It's designed for people who love a good puzzle. Sharpen your memory as you try to match all the pieces correctly. The game works great on mobile, making it easy to play anywhere.</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Sea-War/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Sea-War/raw/main/SEA%20WAR%20Logo.png" alt="Chess">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Sea-War/raw/main/SEA%20WAR%20Logo.png" alt="Sea War">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Sea War</h2>
-                            <p class="item-description">Old School sea battle game. Good for mobile play! Enjoy playing with a friend or in one player mode.</p>
+                            <p class="item-description">This is a sea battle game that's simple and fun to play. You can enjoy it alone in one-player mode or challenge a friend. Each match tests your strategy and timing on the high seas. The game runs smoothly on mobile, making it perfect for play on the go.</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Frisbee-Golf/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Frisbee-Golf/raw/main/Frisbee%20Golf%20Logo%202.png" alt="Chess">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Frisbee-Golf/raw/main/Frisbee%20Golf%20Logo%202.png" alt="Frisbee Golf">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Frisbee Golf</h2>
-                            <p class="item-description">This is the start of our Frisbee Golf Game! We will add custom sprites in the future. Enjoy playing with a friend or one player.</p>
+                            <p class="item-description">Are you ready to show off your frisbee golf skills? Play solo or challenge a friend to see who scores the best. The game features over 20 exciting levels to test your accuracy and strategy. Have fun as you aim for the perfect throw on every course.</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Checkers-Game/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/CheckersLogo.png" alt="Checkers">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/CheckersLogo.png" alt="Checkers">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Checkers</h2>
-                            <p class="item-description">Test your skills in a game of Checkers. Play two player or have fun playing against the AI! Tablet and computer only.</p>
+                            <p class="item-description">Test your strategic skills in a classic game of Checkers. You can play against a friend in two-player mode for a competitive match. If you prefer, challenge the AI and see if you can outsmart it. The game offers fun and engaging gameplay for players of all skill levels.</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Hearts-Card-Game/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Hearts.png" alt="Hearts">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Hearts.png" alt="Hearts">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Hearts</h2>
-                            <p class="item-description">Test your skills in a game of Hearts. Single player against the AI! Mobile friendly play!</p>
+                            <p class="item-description">Test your card-playing skills in an exciting game of Hearts. Play solo against the AI and try to outsmart your opponents. Each round challenges your strategy and decision-making abilities. The game is optimized for mobile, so you can enjoy it anywhere.</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Bowling-1/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Bowling%20Game%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Bowling%20Game%20Logo.png" alt="Bowling">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Bowling</h2>
-                            <p class="item-description">A basic one or two player bowling game. Good for mobile play!</p>
+                            <p class="item-description">Enjoy a classic bowling experience in this simple game. You can play alone or compete with a friend in two-player mode. Each frame challenges your aim and timing for the perfect strike. The game is optimized for mobile, so you can play anytime, anywhere.</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/BlackJack/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Blackjack%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Blackjack%20Logo.png" alt="Blackjack">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Blackjack</h2>
-                            <p class="item-description">Basic Blackjack game to pass time! Use desktop view on mobile to see the entire page.</p>
+                            <p class="item-description">Enjoy a classic game of Blackjack to pass the time. Test your luck and strategy as you aim for 21. The game is simple and easy to pick up for quick sessions. It's perfect for a few minutes of fun anytime you want.</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Kids-Coloring-Fun/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Kids%20Coloring%20Book%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Kids%20Coloring%20Book%20Logo.png" alt="Kids Coloring Book">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Kids Coloring Book</h2>
-                            <p class="item-description">A kids line art coloring book made by a kid! Best on a tablet or computer.</p>
+                            <p class="item-description">This kids' line art coloring book was created by a kid and is sure to delight young artists. Children can have fun coloring a variety of playful designs. The book works best on a tablet or desktop for the full interactive experience. It's a creative way for kids to enjoy art anytime.</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://best-businesses.github.io/Your-Company-Video-Game/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Titan%20Space%20Defense%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Titan%20Space%20Defense%20Logo.png" alt="Titan Space Defense">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Titan Space Defense</h2>
-                            <p class="item-description">A cool space shooter game with 15 levels of excitement! Mobile Friendly!</p>
+                            <p class="item-description">Blast off into an exciting space adventure in this thrilling shooter game. Fight through 15 levels filled with challenging enemies and obstacles. Each level ramps up the intensity, keeping you on your toes. The game is mobile-friendly, so you can play anywhere you go.</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://best-businesses.github.io/My-Food-Truck-Game/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/My%20Food%20Truck%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/My%20Food%20Truck%20Logo.png" alt="My Food Truck">
                         </a>
                         <div class="content">
                             <h2 class="item-title">My Food Truck</h2>
-                            <p class="item-description">This cool little game gives you a food truck and says get to work! This is a one player game and best for tablet and computer. It may work on mobile in desktop mode.</p>
+                            <p class="item-description">Step into the shoes of a food truck owner in this fun and engaging game. Your goal is simple: get to work and serve as many customers as you can. The game is designed for a single player and works best on a tablet or computer. It may also run on mobile devices if you use desktop mode.</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Magical-Word-Search/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Education-Logos/raw/main/Magical%20Word%20Search.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Education-Logos/raw/main/Magical%20Word%20Search.png" alt="Magical Word Search">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Magical Word Search</h2>
-                            <p class="item-description">This is a one player word search game. You can put in ten words to find in the puzzle! Great for studying spelling words!</p>
+                            <p class="item-description">Challenge yourself with this engaging one-player word search game. You can enter up to ten words to search for in each puzzle. It's a fun and interactive way to practice spelling and vocabulary. Perfect for studying or just enjoying a relaxing brain game.</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://team-america.github.io/Patriotic-Blockade/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Patriotic%20Blocks%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Patriotic%20Blocks%20Logo.png" alt="Patriotic Blocks">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Patriotic Blocks</h2>
-                            <p class="item-description">This is a one player brain game. Good for mobile play!</p>
+                            <p class="item-description">Enjoy a classic block-stacking challenge in this one-player game. Test your speed and strategy as you fit the pieces together. Each level gets progressively harder, keeping you engaged. It's a fun and addictive way to pass the time.</p>
                         </div>
                     </div>
                     
-                   <div class="inner-item">
+                    <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Luxury-Casino/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Luxury%20Casino-2-Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Luxury%20Casino-2-Logo.png" alt="Luxury Casino">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Luxury Casino</h2>
-                            <p class="item-description">This is a one player slot machine game. Enjoy a reward system and buy luxury shop items as you win!</p>
+                            <p class="item-description">Try your luck in this exciting one-player slot machine game. Spin the reels and aim for big wins with every play. The game features a reward system that lets you earn coins and prizes. Use your winnings to buy luxury items and upgrade your in-game experience.</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Match-3/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Match-3/raw/main/Match-3%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Match-3/raw/main/Match-3%20Logo.png" alt="Match 3">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Match 3</h2>
-                            <p class="item-description">This is a one player symbol matching game. Enjoy groovy background music while you play!</p>
+                            <p class="item-description">Challenge yourself in this fun one-player symbol matching game. Match all the symbols correctly to advance through the levels. The game features groovy background music to keep the experience lively and engaging. It's a relaxing yet stimulating way to pass the time.</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Math-Tower-Defense/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Education-Logos/raw/main/Math%20Tower%20Defense.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Education-Logos/raw/main/Math%20Tower%20Defense.png" alt="Math Tower Defense">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Math Tower Defense</h2>
-                            <p class="item-description">This is a one player tower defense game. Only good for Tablet & Computer. May work on desktop mode.</p>
+                            <p class="item-description">This is an exciting one-player tower defense game available only on the desktop version. Strategically place your towers to stop waves of enemies from advancing. Each level becomes more challenging as new threats appear. Test your planning and reflexes to defend your territory successfully.</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Stacking-Checkers/
-" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Stacking%20Checkers%20Logo.png" alt="Featured 3">
+                        <a href="https://titanbusinesspros.github.io/Stacking-Checkers/" class="image-container">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Stacking%20Checkers%20Logo.png" alt="Stacking Checkers">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Stacking Checkers</h2>
-                            <p class="item-description">This is a one player checkers game. Good for mobile play! Enjoy this unique style of checkers! No downloads ever in Gameville!</p>
+                            <p class="item-description">Try your hand at this unique stacking checkers game. Challenge yourself to stack and capture pieces strategically. The game offers a fresh twist on the classic checkers experience. It's optimized for mobile play, so you can enjoy it anywhere.</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/War-Card-Game/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/War-Card-Game/raw/main/War%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/War-Card-Game/raw/main/War%20Logo.png" alt="War Card Game">
                         </a>
                         <div class="content">
                             <h2 class="item-title">War Card Game</h2>
-                            <p class="item-description">This is a one player card game. Enjoy groovy background music while you play! No sign up in Gameville! Just pure game play!</p>
+                            <p class="item-description">Play the classic card game WAR in this fun one-player version. Challenge yourself to see how long you can win against the deck. The game features groovy background music to make each round more enjoyable. It's a simple yet addictive way to pass the time.</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Follow-Along/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Follow-Along/raw/main/Follow%20Along%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Follow-Along/raw/main/Follow%20Along%20Logo.png" alt="Follow Along">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Follow Along</h2>
-                            <p class="item-description">This is a one player memory game. Enjoy groovy background music while you play!</p>
+                            <p class="item-description">Test your memory skills in this fun one-player game. Match pairs and challenge yourself to remember each card's position. The game features groovy background music to make gameplay more enjoyable. It's a relaxing and engaging way to exercise your brain.</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Space-Turkey/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Space-Turkey/raw/main/Space%20Turkey%20Game%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Space-Turkey/raw/main/Space%20Turkey%20Game%20Logo.png" alt="Space Turkey">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Space Turkey</h2>
-                            <p class="item-description">This is a one player endless runner game. Avoid being a turkey dinner and jump over the kitchen table as it heads your way. Not tested for mobile.</p>
+                            <p class="item-description">Play this thrilling one-player endless runner game and see how far you can go. Dodge obstacles and avoid becoming a turkey dinner as the kitchen table rushes toward you. Timing and quick reflexes are key to surviving each run.</p>
                         </div>
                     </div>
                     
-                     <div class="inner-item">
+                    <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Space-Math-Asteroids-Hard/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Education-Logos/raw/main/Space%20Asteroids.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Education-Logos/raw/main/Space%20Asteroids.png" alt="Space Math Asteroids">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Space Math Asteroids</h2>
-                            <p class="item-description">This is a one player space shooter game with over 20 levels. Answer a basic math question each level. Not tested for mobile use.</p>
+                            <p class="item-description">Blast off in this one-player space shooter game available only on desktop. Fight through over 20 action-packed levels as you dodge and destroy enemies. Each level challenges you with a basic math question to solve. Combine your shooting skills and math smarts to conquer every stage.</p>
                         </div>
                     </div>
                     
-                     <div class="inner-item">
+                    <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Golf-Game/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Golf-Game/raw/main/Golf%20Game%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Golf-Game/raw/main/Golf%20Game%20Logo.png" alt="Golf Challenge">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Golf Challenge</h2>
-                            <p class="item-description">This is a one player or two player golf game with 24 holes. Not tested for mobile but works great on computer!.</p>
+                            <p class="item-description">Enjoy this fun golf game, playable by one or two players. Tee off across 24 challenging holes and test your skills. The game has not been tested on mobile devices, so it's best enjoyed on a computer. Each hole offers a new opportunity for strategy and precision.</p>
                         </div>
                     </div>
               
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Space-Word-Mission/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Space%20Word%20Mission%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Space%20Word%20Mission%20Logo.png" alt="Space Word Mission">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Space Word Mission</h2>
-                            <p class="item-description">This is a one player word search game. Test your brain and see if you can take your spaceship to flight!</p>
+                            <p class="item-description">Challenge yourself with this exciting one-player word search game. Find all the hidden words to test your brain and sharpen your skills. Each correct answer helps prepare your spaceship for takeoff. Can you complete the puzzle and launch your ship into flight?</p>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
-
-            <!-- RIGHT COLUMN: 25 ads -->
-            <div class="ads-col">
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 56">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 57">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 58">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 59">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 60">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 61">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 62">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 63">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 64">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 65">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 66">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 67">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 68">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 69">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 70">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 71">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 72">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 73">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 74">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 75">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 76">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 77">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 78">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 79">
-                </a>
-                <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 80">
-                </a>
-            </div>
-        </div>
-
-        <!-- BOTTOM ROW: 25 ads -->
-        <div class="ads-row">
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 81">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 82">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 83">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 84">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 85">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 86">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 87">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 88">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 89">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 90">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 91">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 92">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 93">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 94">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 95">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 96">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 97">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 98">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 99">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 100">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 101">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 102">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 103">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 104">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 105">
-            </a>
         </div>
 
         <!-- FOOTER SECTION -->
@@ -1061,8 +767,18 @@
                     <a href="https://www.facebook.com/TitanBusinessPros/" class="footer-social-link" target="_blank">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <span class="footer-phone">405-998-7979</span>
+                    <a href="https://www.pinterest.com/titanbusinesspros/" class="footer-social-link" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@TitanBusinessPros" class="footer-social-link" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <span class="footer-phone">(405) 998-7979</span>
                     <span class="footer-email">titanbusinesspros@gmail.com</span>
+                </div>
+                <div class="footer-bottom">
+                    <div class="footer-address"></div>
+                    <a href="https://www.okiewebsiteguy.com/" class="footer-website" target="_blank">www.okiewebsiteguy.com</a>
                 </div>
             </div>
         </footer>
@@ -1070,6 +786,43 @@
     </div>
 
     <script>
+        // Image optimization and lazy loading
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lazy load images
+            const lazyImages = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.getAttribute('data-src');
+                        img.addEventListener('load', () => {
+                            img.classList.add('loaded');
+                            const placeholder = img.previousElementSibling;
+                            if (placeholder && placeholder.classList.contains('image-placeholder')) {
+                                placeholder.style.display = 'none';
+                            }
+                        });
+                        img.removeAttribute('data-src');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            lazyImages.forEach(img => {
+                imageObserver.observe(img);
+            });
+
+            // Preload critical images
+            const criticalImages = [
+                'https://github.com/TitanBusinessPros/Gameville/raw/main/Gameville-logo-1.png'
+            ];
+            
+            criticalImages.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        });
+
         // Make the logo interactive with mouse movement
         const logo = document.getElementById('logo');
         let isDragging = false;
@@ -1152,9 +905,13 @@
         const musicToggle = document.getElementById('music-toggle');
         let musicStarted = false;
 
+        // Set the music source
+        backgroundMusic.src = "https://github.com/TitanBusinessPros/Gameville/raw/main/Gameville%20Dreams.mp3";
+
         // Function to start music
         function startMusic() {
             if (!musicStarted) {
+                backgroundMusic.volume = 0.5; // Set volume to 50%
                 backgroundMusic.play().then(() => {
                     musicStarted = true;
                     musicToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
