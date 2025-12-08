@@ -1,1148 +1,2716 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F8LTDKS8KY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-F8LTDKS8KY');
-</script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gameville - Free Online Games</title>
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="https://github.com/TitanBusinessPros/Gameville/raw/main/Gameville-logo-1.png" as="image">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Gameville-Favicon.png">
-    
-    <!-- Facebook Open Graph Tags -->
-    <meta property="og:title" content="Gameville - Free Online Games">
-    <meta property="og:description" content="Free online game play with no hassles! No downloads or sign-ups! Just pure awesome gameplay!">
-    <meta property="og:image" content="https://via.placeholder.com/1200x630/667eea/ffffff?text=Gameville+Meta+Image">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://titanbusinesspros.github.io/Gameville/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Gameville">
-    
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Gameville - Free Online Games">
-    <meta name="twitter:description" content="Free online game play with no hassles! No downloads or sign-ups! Just pure awesome gameplay!">
-    <meta name="twitter:image" content="https://via.placeholder.com/1200x630/667eea/ffffff?text=Gameville+Meta+Image">
-    
-    <!-- Standard Meta Tags -->
-    <meta name="description" content="Free online game play with no hassles! No downloads or sign-ups! Just pure awesome gameplay!">
-    
-    <!-- Font Awesome for Facebook icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>Zombie Outbreak Honolulu</title>
+    <link rel="icon" type="image/png" href="https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/ZOH-Favicon.png">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .page-wrapper {
-            max-width: 1800px;
-            margin: 0 auto;
-            min-height: calc(100vh - 40px);
-            display: grid;
-            grid-template-rows: auto auto 1fr auto auto;
-            gap: 20px;
-        }
-
-        /* Header Styles */
-        .site-header {
-            text-align: center;
-            padding: 10px 20px 5px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .header-logo {
-            max-width: 300px;
-            height: auto;
-            transition: all 0.5s ease;
-            cursor: pointer;
-            /* Initial animation */
-            animation: float 3s ease-in-out infinite;
-            margin-bottom: 5px;
-        }
-
-        .header-logo:hover {
-            animation-play-state: paused;
-        }
-
-        .header-title {
-            color: #333;
-            font-size: 2.2em;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-            margin: 0;
-        }
-
-        .daily-message {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-            color: #333;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            margin-top: 5px;
-            font-size: 1.1em;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Logo animation */
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
-        /* Footer Styles */
-        .site-footer {
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .footer-copyright {
-            font-size: 1em;
-            margin-bottom: 10px;
-            flex: 1;
-        }
-
-        .footer-contact {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            flex: 2;
-        }
-
-        .footer-social-link {
-            color: white;
-            font-size: 1.5em;
-            transition: color 0.3s ease;
-        }
-
-        .footer-social-link:hover {
-            color: #3b5998; /* Facebook blue */
-        }
-
-        .footer-phone, .footer-email {
-            font-size: 1em;
-        }
-
-        /* Middle area - single column for games */
-        .middle-row {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            align-items: stretch;
-        }
-
-        /* Top and Bottom ad rows */
-        .ads-row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .ad-box {
-            width: 100px;
-            height: 100px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid #ddd;
-            border-radius: 8px;
+            background: #0a0a0a;
+            color: #fff;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: block;
+            user-select: none;
         }
-
-        .ad-box:hover {
-            transform: scale(1.08);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-        }
-
-        .ad-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .center-container {
-            background: rgba(255, 255, 255, 0.98);
-            border: 4px solid #fff;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            overflow-y: auto;
-            height: 100%;
-        }
-
-        .center-title {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 2.5em;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-        }
-
-        .inner-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .inner-item {
-            background: #fff;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .inner-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .image-container {
-            width: 100%;
-            height: 160px;
-            display: block;
-            overflow: hidden;
-            background: #f5f5f5;
+        
+        #game-container {
             position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
         }
-
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        
+        #game-canvas {
+            display: block;
+            background: #1a3a1a;
         }
-
-        .image-container img.loaded {
-            opacity: 1;
-        }
-
-        .image-container:hover img {
-            transform: scale(1.1);
-        }
-
-        .content {
-            padding: 15px;
-        }
-
-        .item-title {
-            color: #333;
-            font-size: 1.2em;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        .item-description {
-            color: #666;
-            line-height: 1.5;
-            font-size: 0.9em;
-        }
-
-        /* Loading placeholder */
-        .image-placeholder {
+        
+        #game-ui {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
+            pointer-events: none;
+            z-index: 100;
         }
-
-        @keyframes loading {
-            0% {
-                background-position: 200% 0;
-            }
-            100% {
-                background-position: -200% 0;
-            }
+        
+        #hud {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 2px solid #4a4a4a;
+            pointer-events: auto;
+            min-width: 220px;
+            transition: opacity 0.3s;
         }
-
-        /* Music control */
-        .music-control {
-            position: fixed;
+        
+        #hud.collapsed {
+            display: none;
+        }
+        
+        #hud-toggle {
+            display: block;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #4a4a4a;
+            border-radius: 8px;
+            color: white;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            z-index: 101;
+            pointer-events: auto;
+            font-size: 0.9rem;
+        }
+        
+        #mini-stats {
+            display: none;
+            position: absolute;
+            bottom: 190px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #4a4a4a;
+            border-radius: 8px;
+            padding: 8px 15px;
+            pointer-events: none;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+        
+        #mini-stats span {
+            margin: 0 10px;
+            color: #4ecdc4;
+            font-weight: bold;
+        }
+        
+        /* Hide mini-stats - not needed with stats button */
+        
+        #hud h2 {
+            color: #ff6b6b;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .hud-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        
+        .hud-value {
+            color: #4ecdc4;
+            font-weight: bold;
+        }
+        
+        #ammo-count {
+            color: #ffd166;
+        }
+        
+        #lives-container {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+            align-items: center;
+        }
+        
+        .life-heart {
+            color: #ff6b6b;
+            font-size: 1.5rem;
+        }
+        
+        .life-heart.empty {
+            color: #555;
+        }
+        
+        #weapon-info {
+            position: absolute;
             bottom: 20px;
             right: 20px;
             background: rgba(0, 0, 0, 0.7);
-            color: white;
-            border-radius: 50%;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 2px solid #4a4a4a;
+            pointer-events: auto;
+            text-align: center;
+            display: none !important;
+        }
+        
+        #weapon-name {
+            color: #ffd166;
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+        
+        #zoom-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            pointer-events: auto;
+        }
+        
+        .zoom-btn {
             width: 50px;
             height: 50px;
+            background: rgba(40, 40, 40, 0.8);
+            border-radius: 8px;
+            border: 2px solid #666;
+            color: white;
+            font-size: 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            z-index: 1000;
-            transition: all 0.3s ease;
         }
-
-        .music-control:hover {
-            background: rgba(0, 0, 0, 0.9);
-            transform: scale(1.1);
+        
+        #instructions {
+            position: absolute;
+            top: 80px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 2px solid #4a4a4a;
+            max-width: 300px;
+            pointer-events: auto;
         }
-
-        /* Footer additions */
-        .footer-bottom {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            width: 100%;
+        
+        #instructions h3 {
+            color: #4ecdc4;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
         }
-
-        .footer-address, .footer-website {
-            margin: 5px 0;
-            font-size: 0.9em;
+        
+        #instructions p {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            line-height: 1.4;
         }
-
-        .footer-website {
+        
+        #save-indicator {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(78, 205, 196, 0.9);
             color: white;
-            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            z-index: 300;
         }
-
-        .footer-website:hover {
-            text-decoration: underline;
+        
+        .screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 200;
+            text-align: center;
+            padding: 20px;
+            overflow-y: auto;  /* Allow scrolling if content too tall */
         }
-
-        /* Make it a bit nicer on small screens */
-        @media (max-width: 900px) {
-            .center-container {
-                height: auto;
-                max-height: 70vh;
+        /* Loading Screen */
+        #loading-screen {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 300;
+        }
+        #loading-logo { 
+            max-width: 300px; max-height: 150px; margin-bottom: 30px; }
+        #loading-title { 
+            font-size: 2.5rem; color: #ff6b6b; margin-bottom: 20px; }
+        #loading-bar-container { 
+           width: 400px; max-width: 80%; height: 30px; background: rgba(0, 0, 0, 0.5); border: 3px solid #4a4a4a; border-radius: 15px; overflow: hidden; margin-bottom: 15px; }
+        #loading-bar { 
+            width: 0%; height: 100%; background: linear-gradient(90deg, #4ecdc4, #ff6b6b); transition: width 0.3s ease; }
+        #loading-percentage { 
+            font-size: 2rem; color: #ffd166; font-weight: bold; }
+  
+        .screen-title {
+            font-size: 2.5rem;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 107, 107, 0.7);
+        }
+        
+        .screen-subtitle {
+            font-size: 1rem;
+            color: #4ecdc4;
+            margin-bottom: 10px;
+            max-width: 800px;
+            line-height: 1.5;
+        }
+        
+        .screen-stats {
+            background: rgba(40, 40, 40, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 2px solid #4a4a4a;
+            min-width: 250px;
+        }
+        
+        .screen-stats div {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .screen-stats span:last-child {
+            color: #ffd166;
+            font-weight: bold;
+        }
+        
+        .btn {
+            background: linear-gradient(to bottom, #ff6b6b, #c44545);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.3rem;
+            border-radius: 8px;
+            margin: 15px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid #ff8a8a;
+            font-weight: bold;
+            min-width: 200px;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(to bottom, #ff8a8a, #d45555);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        .difficulty-btn {
+            transition: all 0.2s;
+            opacity: 0.7;
+        }
+        
+        .difficulty-btn:hover {
+            transform: translateY(-2px);
+            opacity: 1;
+        }
+        
+        .difficulty-btn.selected {
+            opacity: 1;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            transform: scale(1.05);
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        /* Mobile Controls */
+        #mobile-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 250px;
+            pointer-events: none;
+            z-index: 150;
+            display: none;
+        }
+        
+        #joystick-area {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(100, 100, 100, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            pointer-events: auto;
+        }
+        
+        #joystick-stick {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.6);
+            border: 3px solid rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        #shoot-button {
+            position: absolute;
+            bottom: 50px;
+            right: 30px;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 107, 107, 0.7);
+            border: 4px solid rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: auto;
+            user-select: none;
+        }
+        
+        @media (max-width: 768px) {
+            #mobile-controls {
+                display: block;
             }
-
-            .footer-content {
-                flex-direction: column;
-                gap: 15px;
+            
+            #zoom-controls {
+                display: none !important;
             }
-
-            .footer-contact {
-                flex-direction: column;
-                gap: 10px;
+            
+            #weapon-info {
+                display: none !important;
             }
-
-            .header-title {
-                font-size: 1.8em;
+            
+            #pause-btn {
+                width: 40px !important;
+                height: 40px !important;
+                font-size: 1.2rem !important;
+                top: 15px !important;
+                right: 15px !important;
             }
-
-            .daily-message {
-                font-size: 1em;
-                padding: 6px 12px;
+            
+            #hud {
+                top: 70px !important;
+                left: 15px !important;
+                font-size: 0.85rem;
+                max-width: 200px;
             }
-
-            .ad-box {
-                width: 80px;
-                height: 80px;
+            
+            #hud.collapsed {
+                display: none;
+            }
+            
+            #instructions {
+                display: none !important;
+            }
+            
+            /* Make start screen scrollable and compact on mobile */
+            .screen-title {
+                font-size: 1.5rem !important;
+                margin-bottom: 3px !important;
+            }
+            
+            .screen-subtitle {
+                font-size: 0.8rem !important;
+                margin-bottom: 5px !important;
+            }
+            
+            .difficulty-btn {
+                padding: 8px 12px !important;
+                font-size: 0.85rem !important;
+                min-width: 80px !important;
+            }
+            
+            .screen-stats {
+                padding: 8px !important;
+                font-size: 0.8rem !important;
+                margin: 5px 0 !important;
+            }
+            
+            .btn {
+                padding: 8px 20px !important;
+                font-size: 0.95rem !important;
+                min-width: 140px !important;
+                margin: 5px !important;
+            }
+            
+            .screen img {
+                max-width: 150px !important;
+                max-height: 80px !important;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Background Music -->
-    <audio id="background-music" loop>
-        <source src="https://github.com/TitanBusinessPros/Gameville/raw/main/Gameville%20Dreams.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    
-    <!-- Music Control -->
-    <div class="music-control" id="music-toggle">
-        <i class="fas fa-music"></i>
-    </div>
-
-    <div class="page-wrapper">
-
-        <!-- HEADER SECTION -->
-        <header class="site-header">
-            <img src="https://github.com/TitanBusinessPros/Gameville/raw/main/Gameville-logo-1.png" alt="Gameville Logo" class="header-logo" id="logo">
-            <h1 class="header-title">Discover Oklahoma City's Newest Gaming Platform!</h1>
-            <div class="daily-message">Check back daily for new games!</div>
-        </header>
-
-        <!-- TOP ROW: 30 ads -->
-        <div class="ads-row">
-            <a href="https://www.singanewpsalm.church/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville/raw/main/SANS.png" alt="Ad 1">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 2">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 3">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 4">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 5">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 6">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 7">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 8">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 9">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 10">
-             </a>
-            <a href="https://www.theopenchurchproject.org/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville/raw/main/OCP.png" alt="Ad 12">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 10">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 13">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 14">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 15">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 16">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 17">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 18">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 19">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 20">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 21">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 22">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 23">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 24">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 25">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 26">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 27">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 28">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 29">
-            </a>
-            <a href="https://www.okiewebsiteguy.com/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Titan%20Logo-2.png" alt="Ad 30">
-            </a>
+    <div id="game-container">
+        <div id="loading-screen" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; text-align: center;">
+            <img src="https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/ZOH-Logo-real.png" style="max-width: 300px; margin-bottom: 30px;">
+            <h1 style="font-size: 2.5rem; color: #ff6b6b; margin-bottom: 20px;">LOADING GAME</h1>
+            <div style="width: 400px; max-width: 80%; height: 30px; background: rgba(0, 0, 0, 0.5); border: 3px solid #4a4a4a; border-radius: 15px; overflow: hidden; margin-bottom: 15px;">
+                <div id="loading-bar" style="width: 0%; height: 100%; background: linear-gradient(90deg, #4ecdc4, #ff6b6b); transition: width 0.3s ease;"></div>
+            </div>
+            <p id="loading-percentage" style="font-size: 2rem; color: #ffd166; font-weight: bold;">0%</p>
         </div>
-
-        <!-- CENTER: Your game / gallery -->
-        <!-- MIDDLE ROW: center games only -->
-        <div class="middle-row">
-            <div class="center-container">
-                <h1 class="center-title">Welcome To Gameville</h1>
-                <div class="inner-grid">
-                    <!-- All games with lazy loading -->
-
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Zombie-Outbreak-Honolulu/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/ZOH-Logo%203.png" alt="Zombie Outbreak Honolulu">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Zombie Outbreak Honolulu</h2>
-                            <p class="item-description">We are currently testing & modifying this game. Check back soon for official deployment!</p>
-                        </div>
+        <canvas id="game-canvas"></canvas>
+        
+        <div id="game-ui">
+            <button id="hud-toggle">📊 STATS</button>
+            
+            <div id="hud" class="collapsed">
+                <h2>ZOMBIE SURVIVAL</h2>
+                <div class="hud-item">
+                    <span>Stage:</span>
+                    <span id="stage" class="hud-value">1</span>
+                </div>
+                <div class="hud-item">
+                    <span>Left:</span>
+                    <span id="zombies-left" class="hud-value">200</span>
+                </div>
+                <div class="hud-item">
+                    <span>Killed:</span>
+                    <span id="zombies-killed" class="hud-value">0</span>
+                </div>
+                <div class="hud-item">
+                    <span>Ammo:</span>
+                    <span id="ammo-count" class="hud-value">20</span>
+                </div>
+                <div id="lives-container">
+                    <span>Lives:</span>
+                    <div id="lives-display">
+                        <span class="life-heart">♥</span>
+                        <span class="life-heart">♥</span>
+                        <span class="life-heart">♥</span>
+                        <span class="life-heart">♥</span>
+                        <span class="life-heart">♥</span>
                     </div>
-
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Chess-Game/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Chess%20Logo.png" alt="Chess">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Chess</h2>
-                            <p class="item-description">Test your skills in a challenging game of Chess. You can play with a friend in two-player mode for a classic head-to-head match. If you prefer solo gameplay, the built-in AI is ready to take you on. The game also runs smoothly on mobile, making it easy to play anywhere.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Navy-War1/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Navy-War1/raw/main/Navy%20War-1%20Logo.png" alt="Navy War-1">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Navy War-1</h2>
-                            <p class="item-description">Compete against a challenging AI opponent in this strategic war game. You'll earn one additional submarine every five moves to strengthen your forces. Use your fleet of five jets to strike the enemy and turn the tide of battle. The game is optimized for mobile play, giving you smooth performance on the go.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Air-Hockey/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Air-Hockey/raw/main/Air%20Hockey-Logo2.png" alt="Air Hockey">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Air Hockey</h2>
-                            <p class="item-description">Enjoy a quick and exciting round of Air Hockey in this fast-paced solo game. The controls are simple, making it easy for anyone to jump in and start playing. Each match delivers quick action that keeps you on your toes. It's the perfect game when you want a fun challenge in just a few minutes.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Guide-The-Fly/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Guide-The-Fly/raw/main/Guide%20The%20Fly%20Logo.png" alt="Guide The Fly">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Guide The Fly</h2>
-                            <p class="item-description">Take the fly on an exciting journey toward the light. You'll guide The Fly through twelve unique stages filled with obstacles. Each level becomes more challenging as you progress. Stay focused and help the little fly reach its final destination.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Sudoku-Game/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Sudoku-Game/raw/main/Sudoku-Logo.png" alt="Sudoku">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Sudoku</h2>
-                            <p class="item-description">Test your skills in a classic game of Sudoku as you work through each puzzle. This experience is designed for a single player who enjoys thoughtful challenges. Relax and clear your mind while solving numbers at your own pace. Enjoy the calming background music that plays as you work through every grid.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Neon-Drift/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/SSG-Image/raw/main/Neon%20Drift%20Logo.png" alt="Neon Drift">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Neon Drift</h2>
-                            <p class="item-description">Get lost in the thrilling world of Neon Drift as you race through vibrant environments. Collect glowing orbs to boost your score and keep the momentum going. The game is designed for a single player who loves fast-paced action. Enjoy the neon visuals and addictive gameplay as you drift through every level.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Gravity-Sling/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gravity-Sling/raw/main/Gravity%20Sling%20Logo.png" alt="Gravity Sling">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Gravity Sling</h2>
-                            <p class="item-description">Test your skills in the challenging game of Gravity Sling. Each level will put your math and problem-solving abilities to the test. You'll need to carefully plan every move to succeed. Can you master all the levels and prove your skills?</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Detective/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Detective/raw/main/Detective%20Logo.png" alt="Detective">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Detective</h2>
-                            <p class="item-description">Step into the role of a detective in this engaging murder mystery game. Take detailed notes and carefully interview witnesses to gather clues. Every choice you make can affect how the case unfolds. Multiple endings await, giving you a different experience with each playthrough.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Dodge-Game/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Dodge-Game/raw/main/Dodge-Logo.png" alt="Dodge">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Dodge</h2>
-                            <p class="item-description">Think you have lightning-fast reflexes? Now is your chance to prove it! A plumber's worst nightmare comes to life as flying toilets rain down on you. They keep coming faster and faster, challenging your speed and agility.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Desert-Rattler-/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Desert-Rattler-/raw/main/Desert%20Rattler%20Logo.png" alt="Desert Rattler">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Desert Rattler</h2>
-                            <p class="item-description">Can you reach a score of 120 or higher? This exciting game is designed for a single player. Challenge yourself and see how high you can go. It's optimized for smooth mobile play, so you can enjoy it anywhere.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Match-Time/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Match-Time/raw/main/Match%20Time%20Logo.png" alt="Match Time">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Match Time</h2>
-                            <p class="item-description">Test your skills in this fun and challenging matching game. It's designed for people who love a good puzzle. Sharpen your memory as you try to match all the pieces correctly. The game works great on mobile, making it easy to play anywhere.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Sea-War/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Sea-War/raw/main/SEA%20WAR%20Logo.png" alt="Sea War">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Sea War</h2>
-                            <p class="item-description">This is a sea battle game that's simple and fun to play. You can enjoy it alone in one-player mode or challenge a friend. Each match tests your strategy and timing on the high seas. The game runs smoothly on mobile, making it perfect for play on the go.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Frisbee-Golf/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Frisbee-Golf/raw/main/Frisbee%20Golf%20Logo%202.png" alt="Frisbee Golf">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Frisbee Golf</h2>
-                            <p class="item-description">Are you ready to show off your frisbee golf skills? Play solo or challenge a friend to see who scores the best. The game features over 20 exciting levels to test your accuracy and strategy. Have fun as you aim for the perfect throw on every course.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Checkers-Game/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/CheckersLogo.png" alt="Checkers">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Checkers</h2>
-                            <p class="item-description">Test your strategic skills in a classic game of Checkers. You can play against a friend in two-player mode for a competitive match. If you prefer, challenge the AI and see if you can outsmart it. The game offers fun and engaging gameplay for players of all skill levels.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Hearts-Card-Game/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Hearts.png" alt="Hearts">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Hearts</h2>
-                            <p class="item-description">Test your card-playing skills in an exciting game of Hearts. Play solo against the AI and try to outsmart your opponents. Each round challenges your strategy and decision-making abilities. The game is optimized for mobile, so you can enjoy it anywhere.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Bowling-1/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Bowling%20Game%20Logo.png" alt="Bowling">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Bowling</h2>
-                            <p class="item-description">Enjoy a classic bowling experience in this simple game. You can play alone or compete with a friend in two-player mode. Each frame challenges your aim and timing for the perfect strike. The game is optimized for mobile, so you can play anytime, anywhere.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/BlackJack/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Blackjack%20Logo.png" alt="Blackjack">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Blackjack</h2>
-                            <p class="item-description">Enjoy a classic game of Blackjack to pass the time. Test your luck and strategy as you aim for 21. The game is simple and easy to pick up for quick sessions. It's perfect for a few minutes of fun anytime you want.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Kids-Coloring-Fun/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Kids%20Coloring%20Book%20Logo.png" alt="Kids Coloring Book">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Kids Coloring Book</h2>
-                            <p class="item-description">This kids' line art coloring book was created by a kid and is sure to delight young artists. Children can have fun coloring a variety of playful designs. The book works best on a tablet or desktop for the full interactive experience. It's a creative way for kids to enjoy art anytime.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://best-businesses.github.io/Your-Company-Video-Game/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Titan%20Space%20Defense%20Logo.png" alt="Titan Space Defense">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Titan Space Defense</h2>
-                            <p class="item-description">Blast off into an exciting space adventure in this thrilling shooter game. Fight through 15 levels filled with challenging enemies and obstacles. Each level ramps up the intensity, keeping you on your toes. The game is mobile-friendly, so you can play anywhere you go.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://best-businesses.github.io/My-Food-Truck-Game/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/My%20Food%20Truck%20Logo.png" alt="My Food Truck">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">My Food Truck</h2>
-                            <p class="item-description">Step into the shoes of a food truck owner in this fun and engaging game. Your goal is simple: get to work and serve as many customers as you can. The game is designed for a single player and works best on a tablet or computer. It may also run on mobile devices if you use desktop mode.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Magical-Word-Search/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Education-Logos/raw/main/Magical%20Word%20Search.png" alt="Magical Word Search">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Magical Word Search</h2>
-                            <p class="item-description">Challenge yourself with this engaging one-player word search game. You can enter up to ten words to search for in each puzzle. It's a fun and interactive way to practice spelling and vocabulary. Perfect for studying or just enjoying a relaxing brain game.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://team-america.github.io/Patriotic-Blockade/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Patriotic%20Blocks%20Logo.png" alt="Patriotic Blocks">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Patriotic Blocks</h2>
-                            <p class="item-description">Enjoy a classic block-stacking challenge in this one-player game. Test your speed and strategy as you fit the pieces together. Each level gets progressively harder, keeping you engaged. It's a fun and addictive way to pass the time.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Luxury-Casino/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Luxury%20Casino-2-Logo.png" alt="Luxury Casino">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Luxury Casino</h2>
-                            <p class="item-description">Try your luck in this exciting one-player slot machine game. Spin the reels and aim for big wins with every play. The game features a reward system that lets you earn coins and prizes. Use your winnings to buy luxury items and upgrade your in-game experience.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Match-3/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Match-3/raw/main/Match-3%20Logo.png" alt="Match 3">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Match 3</h2>
-                            <p class="item-description">Challenge yourself in this fun one-player symbol matching game. Match all the symbols correctly to advance through the levels. The game features groovy background music to keep the experience lively and engaging. It's a relaxing yet stimulating way to pass the time.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Math-Tower-Defense/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Education-Logos/raw/main/Math%20Tower%20Defense.png" alt="Math Tower Defense">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Math Tower Defense</h2>
-                            <p class="item-description">This is an exciting one-player tower defense game available only on the desktop version. Strategically place your towers to stop waves of enemies from advancing. Each level becomes more challenging as new threats appear. Test your planning and reflexes to defend your territory successfully.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Stacking-Checkers/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Stacking%20Checkers%20Logo.png" alt="Stacking Checkers">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Stacking Checkers</h2>
-                            <p class="item-description">Try your hand at this unique stacking checkers game. Challenge yourself to stack and capture pieces strategically. The game offers a fresh twist on the classic checkers experience. It's optimized for mobile play, so you can enjoy it anywhere.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/War-Card-Game/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/War-Card-Game/raw/main/War%20Logo.png" alt="War Card Game">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">War Card Game</h2>
-                            <p class="item-description">Play the classic card game WAR in this fun one-player version. Challenge yourself to see how long you can win against the deck. The game features groovy background music to make each round more enjoyable. It's a simple yet addictive way to pass the time.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Follow-Along/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Follow-Along/raw/main/Follow%20Along%20Logo.png" alt="Follow Along">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Follow Along</h2>
-                            <p class="item-description">Test your memory skills in this fun one-player game. Match pairs and challenge yourself to remember each card's position. The game features groovy background music to make gameplay more enjoyable. It's a relaxing and engaging way to exercise your brain.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Space-Turkey/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Space-Turkey/raw/main/Space%20Turkey%20Game%20Logo.png" alt="Space Turkey">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Space Turkey</h2>
-                            <p class="item-description">Play this thrilling one-player endless runner game and see how far you can go. Dodge obstacles and avoid becoming a turkey dinner as the kitchen table rushes toward you. Timing and quick reflexes are key to surviving each run.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Space-Math-Asteroids-Hard/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Education-Logos/raw/main/Space%20Asteroids.png" alt="Space Math Asteroids">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Space Math Asteroids</h2>
-                            <p class="item-description">Blast off in this one-player space shooter game available only on desktop. Fight through over 20 action-packed levels as you dodge and destroy enemies. Each level challenges you with a basic math question to solve. Combine your shooting skills and math smarts to conquer every stage.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Golf-Game/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Golf-Game/raw/main/Golf%20Game%20Logo.png" alt="Golf Challenge">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Golf Challenge</h2>
-                            <p class="item-description">Enjoy this fun golf game, playable by one or two players. Tee off across 24 challenging holes and test your skills. The game has not been tested on mobile devices, so it's best enjoyed on a computer. Each hole offers a new opportunity for strategy and precision.</p>
-                        </div>
-                    </div>
-              
-                    <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Space-Word-Mission/" class="image-container">
-                            <div class="image-placeholder"></div>
-                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Space%20Word%20Mission%20Logo.png" alt="Space Word Mission">
-                        </a>
-                        <div class="content">
-                            <h2 class="item-title">Space Word Mission</h2>
-                            <p class="item-description">Challenge yourself with this exciting one-player word search game. Find all the hidden words to test your brain and sharpen your skills. Each correct answer helps prepare your spaceship for takeoff. Can you complete the puzzle and launch your ship into flight?</p>
-                        </div>
-                    </div>
-
                 </div>
             </div>
+            
+            <button id="pause-btn" style="position: absolute; top: 15px; right: 15px; width: 50px; height: 50px; background: rgba(0,0,0,0.7); border: 2px solid #4a4a4a; border-radius: 8px; color: white; font-size: 1.5rem; cursor: pointer; pointer-events: auto; display: flex; align-items: center; justify-content: center;">⏸</button>
+            
+            <div id="save-indicator">GAME SAVED</div>
+            
+            <div id="zoom-controls">
+                <button id="zoom-out" class="zoom-btn">-</button>
+                <button id="zoom-in" class="zoom-btn">+</button>
+            </div>
+            
+            <div id="instructions">
+                <h3>CONTROLS</h3>
+                <p>• WASD/Arrows: Move</p>
+                <p>• Mouse: Aim & Click to Shoot</p>
+                <p>• Scroll: Zoom</p>
+            </div>
         </div>
-
-        <!-- BOTTOM ROW: 25 ads -->
-        <div class="ads-row">
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 81">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 82">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 83">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 84">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 85">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 86">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 87">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 88">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 89">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 90">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 91">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 92">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 93">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 94">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 95">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 96">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 97">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 98">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 99">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 100">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 101">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 102">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 103">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 104">
-            </a>
-            <a href="https://titanbusinesspros.github.io/Gameville-Ads/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Put%20Your%20Ad%20Here.png" alt="Ad 105">
-            </a>
-        </div>
-
-        <!-- FOOTER SECTION -->
-        <footer class="site-footer">
-            <div class="footer-content">
-                <div class="footer-copyright">Copyright 2025 Titan Business Pros LLC</div>
-                <div class="footer-contact">
-                    <a href="https://www.facebook.com/TitanBusinessPros/" class="footer-social-link" target="_blank">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.pinterest.com/titanbusinesspros/" class="footer-social-link" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@TitanBusinessPros" class="footer-social-link" target="_blank">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <span class="footer-phone">(405) 998-7979</span>
-                    <span class="footer-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b7c3dec3d6d9d5c2c4ded9d2c4c4c7c5d8c4f7d0dad6dedb99d4d8da">[titanbusinesspros@gmail.com]</a></span>
-                </div>
-                <div class="footer-bottom">
-                    <div class="footer-address"></div>
-                    <a href="https://www.okiewebsiteguy.com/" class="footer-website" target="_blank">www.okiewebsiteguy.com</a>
+        
+        <div id="start-screen" class="screen">
+            <button onclick="window.history.back()" style="position: absolute; top: 15px; left: 15px; background: rgba(0,0,0,0.7); border: 2px solid #4a4a4a; border-radius: 8px; color: white; padding: 10px 20px; cursor: pointer; font-size: 1rem; font-weight: bold;">← BACK</button>
+            
+            <img src="https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/ZOH-Logo-real.png" alt="Zombie Outbreak Honolulu" style="max-width: 200px; max-height: 100px; margin-bottom: 5px;">
+            <h1 class="screen-title" style="font-size: 2rem; margin-bottom: 5px;">ZOMBIE SURVIVAL GAME </h1>
+            <p class="screen-subtitle" style="font-size: 0.9rem; margin-bottom: 8px;">Survive 10 stages of zombies! Game is in development and currently being modified & tested. Zombie Counter Is Broken But Stages Complete. Beware that each boss doubles in HP each level. The last stage has three boss zombies!!!</p>
+            
+            <div style="margin: 10px 0;">
+                <p style="font-size: 1rem; margin-bottom: 8px; color: #ffd166;">SELECT DIFFICULTY:</p>
+                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                    <button id="easy-btn" class="difficulty-btn" style="padding: 10px 20px; font-size: 1rem; background: linear-gradient(to bottom, #4ecdc4, #3ab0a8); border: 3px solid #4ecdc4; border-radius: 8px; color: white; cursor: pointer; font-weight: bold; min-width: 100px;">EASY</button>
+                    <button id="medium-btn" class="difficulty-btn selected" style="padding: 10px 20px; font-size: 1rem; background: linear-gradient(to bottom, #ffd166, #f4a259); border: 3px solid #ffd166; border-radius: 8px; color: #2d3142; cursor: pointer; font-weight: bold; min-width: 100px;">MEDIUM</button>
+                    <button id="hard-btn" class="difficulty-btn" style="padding: 10px 20px; font-size: 1rem; background: linear-gradient(to bottom, #ff6b6b, #c92a2a); border: 3px solid #ff6b6b; border-radius: 8px; color: white; cursor: pointer; font-weight: bold; min-width: 100px;">HARD</button>
                 </div>
             </div>
-        </footer>
-
+            
+            <div class="screen-stats" style="padding: 10px; margin: 8px 0; min-width: 250px;">
+                <div><span>Stage:</span><span id="start-stage">1</span></div>
+                <div><span>Zombies:</span><span id="start-zombies">200</span></div>
+                <div><span>Ammo:</span><span>20</span></div>
+                <div><span>Lives:</span><span>5</span></div>
+            </div>
+            <button id="start-btn" class="btn" style="padding: 10px 30px; font-size: 1.1rem; margin-top: 8px;">NEW GAME</button>
+            <button id="continue-btn" class="btn hidden" style="padding: 10px 30px; font-size: 1.1rem; margin-top: 5px; background: linear-gradient(to bottom, #4ecdc4, #3a9d94);">CONTINUE</button>
+        </div>
+        
+        <div id="cutscene-screen" class="screen hidden" style="background: black; padding: 0;">
+            <div id="cutscene-placeholder" style="display: none; width: 100%; height: 100%; flex-direction: column; align-items: center; justify-content: center; color: white;">
+                <h1 id="cutscene-title" style="font-size: 4rem; margin-bottom: 20px; text-shadow: 0 0 20px rgba(255,107,107,0.8);">INTRO</h1>
+                <p id="cutscene-subtitle" style="font-size: 1.5rem; opacity: 0.8;">Preparing for battle...</p>
+            </div>
+            <video id="cutscene-video" style="width: 100%; height: 100%; object-fit: contain;" preload="auto">
+                <source id="cutscene-source" src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <button id="skip-cutscene-btn" style="position: absolute; bottom: 30px; right: 30px; background: rgba(0,0,0,0.8); border: 2px solid #fff; border-radius: 8px; color: white; padding: 12px 24px; cursor: pointer; font-size: 1rem; font-weight: bold; z-index: 10; pointer-events: auto;">SKIP →</button>
+        </div>
+        
+        <div id="stage-complete-screen" class="screen hidden">
+            <h1 class="screen-title">STAGE COMPLETE!</h1>
+            <p class="screen-subtitle">Ready for the next wave?</p>
+            <div class="screen-stats">
+                <div><span>Completed:</span><span id="completed-stage">1</span></div>
+                <div><span>Killed:</span><span id="completed-kills">0</span></div>
+                <div><span>Ammo Found:</span><span id="completed-ammo">0</span></div>
+                <div><span>Next Wave:</span><span id="next-stage-zombies">300</span></div>
+            </div>
+            <button id="next-stage-btn" class="btn">NEXT STAGE</button>
+            <button onclick="window.history.back()" class="btn" style="background: linear-gradient(to bottom, #4a4a4a, #2a2a2a); border-color: #666; margin-top: 10px;">← BACK TO GAMES</button>
+        </div>
+        
+        <div id="game-over-screen" class="screen hidden">
+            <h1 class="screen-title">GAME OVER</h1>
+            <p class="screen-subtitle">You have been overwhelmed...</p>
+            <div class="screen-stats">
+                <div><span>Stage:</span><span id="final-stage">1</span></div>
+                <div><span>Killed:</span><span id="final-kills">0</span></div>
+                <div><span>Ammo:</span><span id="final-ammo">0</span></div>
+            </div>
+            <button id="restart-btn" class="btn">RESTART</button>
+            <button onclick="window.history.back()" class="btn" style="background: linear-gradient(to bottom, #4a4a4a, #2a2a2a); border-color: #666; margin-top: 10px;">← BACK TO GAMES</button>
+        </div>
+        
+        <div id="pause-screen" class="screen hidden">
+            <h1 class="screen-title">PAUSED</h1>
+            <p class="screen-subtitle">Game is paused</p>
+            <div class="screen-stats">
+                <div><span>Stage:</span><span id="pause-stage">1</span></div>
+                <div><span>Zombies Left:</span><span id="pause-zombies">200</span></div>
+                <div><span>Lives:</span><span id="pause-lives">3</span></div>
+                <div><span>Ammo:</span><span id="pause-ammo">20</span></div>
+            </div>
+            <button id="resume-btn" class="btn">RESUME</button>
+            <button id="quit-btn" class="btn" style="background: linear-gradient(to bottom, #666, #444); border-color: #888;">QUIT TO MENU</button>
+            <button onclick="window.history.back()" class="btn" style="background: linear-gradient(to bottom, #4a4a4a, #2a2a2a); border-color: #666; margin-top: 10px;">← BACK TO GAMES</button>
+        </div>
+        
+        <!-- Mobile Controls -->
+        <div id="mobile-controls">
+            <div id="joystick-area">
+                <div id="joystick-stick"></div>
+            </div>
+            <div id="shoot-button">SHOOT</div>
+        </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Image optimization and lazy loading
-        document.addEventListener('DOMContentLoaded', function() {
-            // Lazy load images
-            const lazyImages = document.querySelectorAll('img[data-src]');
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.getAttribute('data-src');
-                        img.addEventListener('load', () => {
-                            img.classList.add('loaded');
-                            const placeholder = img.previousElementSibling;
-                            if (placeholder && placeholder.classList.contains('image-placeholder')) {
-                                placeholder.style.display = 'none';
-                            }
-                        });
-                        img.removeAttribute('data-src');
-                        imageObserver.unobserve(img);
-                    }
+    <script>
+        const CONFIG = {
+            CANVAS_WIDTH: 6000,
+            CANVAS_HEIGHT: 6000,
+            STARTING_AMMO: 20,
+            STARTING_LIVES: 5,  // Start with 5 lives instead of 3
+            ZOMBIES_PER_STAGE: [200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100],
+            TOTAL_STAGES: 10,
+            PLAYER_SPEED: 4,
+            PLAYER_SIZE: 75,  // Increased from 50 (50% larger)
+            
+            // ===== ZOMBIE SPEED (EASY TO ADJUST) =====
+            // Lower = slower zombies, Higher = faster zombies
+            // Examples: 0.5-1.5 = Easy, 1.0-2.0 = Medium, 1.5-3.0 = Hard
+            ZOMBIE_SPEED_MIN: 0.8,
+            ZOMBIE_SPEED_MAX: 2.0,
+            // =========================================
+            
+            // ===== BOSS SPEED (EASY TO ADJUST) =====
+            // Examples: 1.0 = Slow, 1.5 = Medium, 2.0 = Fast
+            BOSS_SPEED: 1.5,
+            // =======================================
+            
+            ZOMBIE_SIZE: 68,  // Increased from 45 (50% larger)
+            SHOTGUN_DAMAGE: 40,
+            SHOTGUN_RANGE: 250,
+            SHOTGUN_SPREAD: 0.4,
+            SHOTGUN_PELLETS: 6,
+            SHOTGUN_FIRE_RATE: 800,
+            AMMO_DROP_CHANCE: 0.3,
+            HIDDEN_AMMO_COUNT: 50,
+            MIN_ZOOM: 0.5,
+            MAX_ZOOM: 3,
+            DEFAULT_ZOOM: 1,
+            ZOOM_STEP: 0.25,
+            INVINCIBILITY_TIME: 1000,
+            BUILDING_WIDTH: 150,
+            BUILDING_HEIGHT: 150
+        };
+
+        // Fixed building positions (same every stage)
+        const BUILDING_POSITIONS = [
+            // First 5x5 grid (original 25)
+            {x: 400, y: 400}, {x: 900, y: 400}, {x: 1400, y: 400}, {x: 1900, y: 400}, {x: 2400, y: 400},
+            {x: 400, y: 900}, {x: 900, y: 900}, {x: 1400, y: 900}, {x: 1900, y: 900}, {x: 2400, y: 900},
+            {x: 400, y: 1400}, {x: 900, y: 1400}, {x: 1400, y: 1400}, {x: 1900, y: 1400}, {x: 2400, y: 1400},
+            {x: 400, y: 1900}, {x: 900, y: 1900}, {x: 1400, y: 1900}, {x: 1900, y: 1900}, {x: 2400, y: 1900},
+            {x: 400, y: 2400}, {x: 900, y: 2400}, {x: 1400, y: 2400}, {x: 1900, y: 2400}, {x: 2400, y: 2400},
+            // Second 5x5 grid (new 25)
+            {x: 3200, y: 400}, {x: 3700, y: 400}, {x: 4200, y: 400}, {x: 4700, y: 400}, {x: 5200, y: 400},
+            {x: 3200, y: 900}, {x: 3700, y: 900}, {x: 4200, y: 900}, {x: 4700, y: 900}, {x: 5200, y: 900},
+            {x: 3200, y: 1400}, {x: 3700, y: 1400}, {x: 4200, y: 1400}, {x: 4700, y: 1400}, {x: 5200, y: 1400},
+            {x: 3200, y: 1900}, {x: 3700, y: 1900}, {x: 4200, y: 1900}, {x: 4700, y: 1900}, {x: 5200, y: 1900},
+            {x: 3200, y: 2400}, {x: 3700, y: 2400}, {x: 4200, y: 2400}, {x: 4700, y: 2400}, {x: 5200, y: 2400},
+            // Bottom section buildings
+            {x: 800, y: 3200}, {x: 1600, y: 3200}, {x: 2400, y: 3200}, {x: 3200, y: 3200}, {x: 4000, y: 3200},
+            {x: 800, y: 4000}, {x: 1600, y: 4000}, {x: 2400, y: 4000}, {x: 3200, y: 4000}, {x: 4000, y: 4000},
+            {x: 800, y: 4800}, {x: 1600, y: 4800}, {x: 2400, y: 4800}, {x: 3200, y: 4800}, {x: 4000, y: 4800},
+            {x: 800, y: 5400}, {x: 1600, y: 5400}, {x: 2400, y: 5400}, {x: 3200, y: 5400}, {x: 4000, y: 5400}
+        ];
+
+        // ============================================
+        // PASTE YOUR IMAGE URLS HERE (LINE 302)
+        // Leave blank "" to use colored shapes
+        // ============================================
+        const SPRITES = {
+            player:  "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/tank-2.png",
+            zombie1: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Boss-1.png",
+            zombie2: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Boss%202.png",
+            zombie3: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Boss-3.png",
+            zombie4: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Boss-12.png",
+            zombie5: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Zombie-10.png",
+            zombie6: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Zombie-11.png",
+            zombie7: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Zombie-7.png",
+            zombie8: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Zombie-8.png",
+            zombie9: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Zombie-9.png",
+            zombie10: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Zombie-12.png",  // Stage 6 new zombie
+            zombie11: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Zombie-6.png",  // Stage 7 new zombie
+            zombie12: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Zombie-3.png",  // Stage 8 new zombie
+            zombie13: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Zombie-1.png",  // Stage 9 new zombie
+            zombie14: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Zombie-2.png",  // Stage 10 new zombie
+            ammo: "",
+            // Boss sprites for each stage
+            boss1: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Boss-13.png",
+            boss2: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Boss-15.png",   // Stage 2 boss
+            boss3: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Boss-14.png",   // Stage 3 boss
+            boss4: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Boss-4.png",   // Stage 4 boss
+            boss5: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Boss-5.png",   // Stage 5 boss
+            boss6: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Boss-6.png",   // Stage 6 boss 1
+            boss7: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Boss-7.png",   // Stage 7 boss 1
+            boss8: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Boss-8.png",   // Stage 8 boss 1
+            boss9: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Boss-9.png",   // Stage 9 boss 1
+            boss10: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Boss-10.png",  // Stage 10 boss 1
+            boss11: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Boss-11.png",  // Stage 10 boss 2
+            boss12: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Boss-12.png",  // Stage 10 boss 3
+            // 70 Building sprites (building1-building70)
+            // Using the Oahu Roofing image you provided
+            building1: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Building-2.png",
+            building2: "https://github.com/TitanBusinessPros/ZOH-Buildings/raw/main/HSS-B-2.png",
+            building3: "https://github.com/TitanBusinessPros/ZOH-Buildings/raw/main/Lucky-Strike-B-3.png",
+            building4: "https://github.com/TitanBusinessPros/ZOH-Buildings/raw/main/Hapa-B-4.png",
+            building5: "https://github.com/TitanBusinessPros/ZOH-Buildings/raw/main/Other-Realms-B-5.png",
+            building6: "https://github.com/TitanBusinessPros/ZOH-Buildings/raw/main/Shaka-B-6.png",
+            building7: "https://github.com/TitanBusinessPros/ZOH-Buildings/raw/main/Blue-P-B-7.png",
+            building8: "https://github.com/TitanBusinessPros/ZOH-Buildings/raw/main/Pit-Stop-B-8.png",
+            building9: "https://github.com/TitanBusinessPros/ZOH-Buildings/raw/main/Top-Gun-B-9.png",
+            building10: "https://github.com/TitanBusinessPros/ZOH-Buildings/raw/main/Pawn-Shop-B-10.png",
+            building11: "https://github.com/TitanBusinessPros/ZOH-Buildings/raw/main/S-Love-B-11.png",
+            building12: "https://github.com/TitanBusinessPros/ZOH-Buildings/raw/main/Kapa-B-12.png",
+            building13: "https://github.com/TitanBusinessPros/ZOH-Buildings/raw/main/Angry-B-13.png",
+            building14: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building15: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building16: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building17: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building18: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building19: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building20: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building21: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building22: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building23: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building24: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building25: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building26: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building27: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building28: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building29: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building30: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building31: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building32: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building33: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building34: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building35: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building36: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building37: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building38: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building39: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building40: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building41: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building42: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building43: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building44: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building45: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building46: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building47: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building48: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building49: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building50: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building51: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building52: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building53: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building54: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building55: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building56: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building57: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building58: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building59: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building60: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building61: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building62: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building63: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building64: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building65: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building66: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building67: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building68: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building69: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            building70: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Oahu Roofing.png",
+            // Stage-specific background tiles
+            groundTile1: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Tile-4.png",   // Stage 1 background
+            groundTile2: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Tile-5.png",   // Stage 2 background
+            groundTile3: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Tile-3.png",   // Stage 3 background
+            groundTile4: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Tile-2.png",   // Stage 4 background
+            groundTile5: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Tile-1.png",   // Stage 5 background
+            groundTile6: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Tile-6.png",   // Stage 6 background
+            groundTile7: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Tile-7.png",   // Stage 7 background
+            groundTile8: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Tile-8.png",   // Stage 8 background
+            groundTile9: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Tile-9.png",   // Stage 9 background
+            groundTile10: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Tile-3.png",   // Stage 10 background
+            // Cutscene videos (MP4 format) - 30 seconds each
+            introCutscene: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Ad-1-Zombie.mp4", // Plays when starting a new game
+            stage1Cutscene: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Ad-1-Zombie.mp4", // Plays before stage 1 begins
+            stage2Cutscene: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Ad-1-Zombie.mp4", // Plays before stage 2 begins
+            stage3Cutscene: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Ad-1-Zombie.mp4", // Plays before stage 3 begins
+            stage4Cutscene: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Ad-1-Zombie.mp4", // Plays before stage 4 begins
+            stage5Cutscene: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Ad-1-Zombie.mp4",  // Plays before stage 5 begins
+            // Boss weapon sprite
+            coconutBomb: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Coconut%20bomb.png"
+        };
+
+        // ============================================
+        // BACKGROUND MUSIC FOR EACH STAGE
+        // Paste your MP3 URLs here (one per stage)
+        // Leave blank "" for no music
+        // ============================================
+        const STAGE_MUSIC = {
+            stage1: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Stage-1-song.mp3",
+            stage2: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Stage-1-song.mp3",   // Stage 2 music
+            stage3: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Stage-1-song.mp3",   // Stage 3 music
+            stage4: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Stage-1-song.mp3",   // Stage 4 music
+            stage5: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Stage-1-song.mp3",   // Stage 5 music
+            stage6: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Stage-1-song.mp3",   // Stage 6 music
+            stage7: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Stage-1-song.mp3",   // Stage 7 music
+            stage8: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Stage-1-song.mp3",   // Stage 8 music
+            stage9: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Stage-1-song.mp3",   // Stage 9 music
+            stage10: "https://github.com/TitanBusinessPros/Zombie-Outbreak-Honolulu/raw/main/Stage-1-song.mp3"   // Stage 10 music
+        };
+
+        // Load images
+        const IMG = {};
+        let loadedImages = 0, totalImages = 0;
+
+        function preloadAssets() {
+            return new Promise((resolve) => {
+                const imagesToLoad = Object.keys(SPRITES).filter(key => SPRITES[key] && !SPRITES[key].endsWith('.mp4'));
+                totalImages = imagesToLoad.length;
+                if (totalImages === 0) { resolve(); return; }
+                imagesToLoad.forEach(key => {
+                    IMG[key] = new Image();
+                    IMG[key].onload = IMG[key].onerror = () => {
+                        loadedImages++;
+                        const pct = Math.floor((loadedImages / totalImages) * 100);
+                        document.getElementById('loading-bar').style.width = pct + '%';
+                        document.getElementById('loading-percentage').textContent = pct + '%';
+                        if (loadedImages === totalImages) {
+                            setTimeout(() => {
+                                document.getElementById('loading-screen').style.opacity = '0';
+                                setTimeout(() => {
+                                    document.getElementById('loading-screen').style.display = 'none';
+                                    document.getElementById('start-screen').classList.remove('hidden');
+                                }, 500);
+                                resolve();
+                            }, 500);
+                        }
+                    };
+                    IMG[key].src = SPRITES[key];
                 });
             });
+        }
+        
+        function loadImageIfNeeded(key) {
+    if (!SPRITES[key]) return;
 
-            lazyImages.forEach(img => {
-                imageObserver.observe(img);
-            });
+    if (!IMG[key]) {
+        const img = new Image();
+        img.src = SPRITES[key];
+        IMG[key] = img;
+    }
+}
 
-            // Preload critical images
-            const criticalImages = [
-                'https://github.com/TitanBusinessPros/Gameville/raw/main/Gameville-logo-1.png'
-            ];
+
+        let gameState = {
+            stage: 1,
+            zombiesKilled: 0,
+            zombiesLeft: CONFIG.ZOMBIES_PER_STAGE[0],
+            playerLives: CONFIG.STARTING_LIVES,
+            playerAmmo: CONFIG.STARTING_AMMO,
+            totalAmmoCollected: 0,
+            gameRunning: false,
+            gameOver: false,
+            stageComplete: false,
+            lastShotTime: 0,
+            lastHitTime: 0,
+            zoom: CONFIG.DEFAULT_ZOOM,
+            isInvincible: false,
+            bossActive: false,
+            bossPlayedSound: false,
+            isPaused: false,
+            difficulty: 'medium'  // easy, medium, or hard
+        };
+        
+        // Difficulty presets
+        const DIFFICULTY_PRESETS = {
+            easy: {
+                ZOMBIE_SPEED_MIN: 0.5,
+                ZOMBIE_SPEED_MAX: 1.5,
+                BOSS_SPEED: 1.0,
+                ACID_RANGE: 80,
+                STARTING_LIVES: 7
+            },
+            medium: {
+                ZOMBIE_SPEED_MIN: 0.8,
+                ZOMBIE_SPEED_MAX: 2.0,
+                BOSS_SPEED: 1.5,
+                ACID_RANGE: 100,
+                STARTING_LIVES: 5
+            },
+            hard: {
+                ZOMBIE_SPEED_MIN: 1.2,
+                ZOMBIE_SPEED_MAX: 2.8,
+                BOSS_SPEED: 2.2,
+                ACID_RANGE: 150,
+                STARTING_LIVES: 3
+            }
+        };
+
+
+        const player = {
+            x: CONFIG.CANVAS_WIDTH / 2,
+            y: CONFIG.CANVAS_HEIGHT / 2,
+            size: CONFIG.PLAYER_SIZE,
+            speed: CONFIG.PLAYER_SPEED,
+            angle: 0
+        };
+
+        const bosses = [];  // Changed to array for multiple bosses
+        const coconutBombs = [];  // Boss projectiles
+        const acidPukes = [];  // Zombie acid attacks
+        
+        // Coconut bomb configuration
+        const BOMB_CONFIG = {
+            SIZE: 30,
+            SPEED: 3,
+            EXPLOSION_RADIUS: 120,
+            EXPLOSION_DAMAGE: 1,
+            THROW_INTERVAL: 3000,  // Boss throws bomb every 3 seconds
+            FUSE_TIME: 2000  // Bomb explodes 2 seconds after thrown
+        };
+        
+        // Acid puke configuration
+        const ACID_CONFIG = {
+            SPLASH_RADIUS: 100,  // Area of effect for acid splash
+            DAMAGE: 1,
             
-            criticalImages.forEach(src => {
-                const img = new Image();
-                img.src = src;
-            });
-        });
+            // ===== ACID PUKE RANGE (EASY TO ADJUST) =====
+            // How close zombie needs to be to puke at you
+            // Examples: 100 = Very Close, 150 = Close, 200 = Medium, 300 = Far
+            RANGE: 100,  // Reduced from 200
+            // ============================================
+            
+            PUKE_INTERVAL_FAST: 5000,  // Zombies 1, 2, 3 puke every 5 seconds
+            PUKE_INTERVAL_SLOW: 10000,  // Zombies 4-14 puke every 10 seconds
+            CLOSE_RANGE: 150,  // Or when within 150px of player
+            SPLASH_DURATION: 1500  // Splash stays on ground for 1.5 seconds
+        };
+        const zombies = [];
+        const ammoPacks = [];
+        const bloodSplatters = [];
+        const bulletTraces = [];
+        const buildings = [];
+        const keys = new Set();
+        const mouse = { x: 0, y: 0 };
 
-        // Make the logo interactive with mouse movement
-        const logo = document.getElementById('logo');
-        let isDragging = false;
-        let offsetX, offsetY;
+        const canvas = document.getElementById('game-canvas');
+        const ctx = canvas.getContext('2d');
 
-        // Mouse events for dragging
-        logo.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            offsetX = e.clientX - logo.getBoundingClientRect().left;
-            offsetY = e.clientY - logo.getBoundingClientRect().top;
-            logo.style.cursor = 'grabbing';
-        });
+        // Background music
+        let backgroundMusic = null;
 
-        document.addEventListener('mousemove', (e) => {
-            if (isDragging) {
-                const x = e.clientX - offsetX;
-                const y = e.clientY - offsetY;
-                
-                // Keep the logo within the header boundaries
-                const header = document.querySelector('.site-header');
-                const headerRect = header.getBoundingClientRect();
-                const logoRect = logo.getBoundingClientRect();
-                
-                const maxX = headerRect.width - logoRect.width;
-                const maxY = headerRect.height - logoRect.height;
-                
-                const boundedX = Math.max(0, Math.min(x, maxX));
-                const boundedY = Math.max(0, Math.min(y, maxY));
-                
-                logo.style.position = 'absolute';
-                logo.style.left = `${boundedX}px`;
-                logo.style.top = `${boundedY}px`;
+        // ============================================
+        // CUTSCENE FUNCTIONS
+        // ============================================
+        
+        let currentCutsceneType = null; // Track if we're playing intro or stage
+        
+        function playCutscene(cutsceneType, stage) {
+            currentCutsceneType = cutsceneType; // Remember what type of cutscene this is
+            
+            // Determine which cutscene to play
+            let videoUrl = "";
+            let titleText = "";
+            let subtitleText = "";
+            
+            if (cutsceneType === "intro") {
+                videoUrl = SPRITES.introCutscene;
+                titleText = "ZOMBIE OUTBREAK";
+                subtitleText = "The infection has begun...";
+            } else if (cutsceneType === "stage" && stage >= 1 && stage <= 5) {
+                videoUrl = SPRITES[`stage${stage}Cutscene`];
+                titleText = `STAGE ${stage}`;
+                subtitleText = `${CONFIG.ZOMBIES_PER_STAGE[stage - 1]} zombies incoming...`;
             }
-        });
-
-        document.addEventListener('mouseup', () => {
-            isDragging = false;
-            logo.style.cursor = 'grab';
-        });
-
-        // Touch events for mobile devices
-        logo.addEventListener('touchstart', (e) => {
-            isDragging = true;
-            const touch = e.touches[0];
-            offsetX = touch.clientX - logo.getBoundingClientRect().left;
-            offsetY = touch.clientY - logo.getBoundingClientRect().top;
-        });
-
-        document.addEventListener('touchmove', (e) => {
-            if (isDragging) {
-                const touch = e.touches[0];
-                const x = touch.clientX - offsetX;
-                const y = touch.clientY - offsetY;
+            
+            // Show cutscene screen
+            const cutsceneScreen = document.getElementById('cutscene-screen');
+            const cutsceneVideo = document.getElementById('cutscene-video');
+            const cutsceneSource = document.getElementById('cutscene-source');
+            const cutscenePlaceholder = document.getElementById('cutscene-placeholder');
+            const cutsceneTitle = document.getElementById('cutscene-title');
+            const cutsceneSubtitle = document.getElementById('cutscene-subtitle');
+            const skipBtn = document.getElementById('skip-cutscene-btn');
+            
+            // Show cutscene screen
+            cutsceneScreen.classList.remove('hidden');
+            
+            // If video URL exists, play video
+            if (videoUrl) {
+                cutsceneVideo.style.display = 'block';
+                cutscenePlaceholder.style.display = 'none';
                 
-                // Keep the logo within the header boundaries
-                const header = document.querySelector('.site-header');
-                const headerRect = header.getBoundingClientRect();
-                const logoRect = logo.getBoundingClientRect();
+                // Set video source
+                cutsceneSource.src = videoUrl;
+                cutsceneVideo.load();
                 
-                const maxX = headerRect.width - logoRect.width;
-                const maxY = headerRect.height - logoRect.height;
+                // Play video
+                const playPromise = cutsceneVideo.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(err => {
+                        console.log('Video autoplay failed:', err);
+                        // Show placeholder if video fails
+                        showPlaceholder();
+                    });
+                }
                 
-                const boundedX = Math.max(0, Math.min(x, maxX));
-                const boundedY = Math.max(0, Math.min(y, maxY));
-                
-                logo.style.position = 'absolute';
-                logo.style.left = `${boundedX}px`;
-                logo.style.top = `${boundedY}px`;
-                
-                e.preventDefault(); // Prevent scrolling while dragging
+                // Video ended - move to game
+                cutsceneVideo.onended = () => {
+                    afterCutscene(stage);
+                };
+            } else {
+                // No video URL - show placeholder screen
+                cutsceneVideo.style.display = 'none';
+                showPlaceholder();
             }
-        });
+            
+            function showPlaceholder() {
+                cutsceneVideo.style.display = 'none';
+                cutscenePlaceholder.style.display = 'flex';
+                cutsceneTitle.textContent = titleText;
+                cutsceneSubtitle.textContent = subtitleText;
+                
+                // Auto-advance after 3 seconds
+                setTimeout(() => {
+                    if (!cutsceneScreen.classList.contains('hidden')) {
+                        afterCutscene(stage);
+                    }
+                }, 3000);
+            }
+            
+            // Skip button
+            skipBtn.onclick = () => {
+                if (cutsceneVideo.style.display !== 'none') {
+                    cutsceneVideo.pause();
+                    cutsceneVideo.currentTime = 0;
+                    cutsceneVideo.src = ''; // Fully stop video
+                }
+                afterCutscene(stage);
+            };
+            
+            // Auto-skip after 30 seconds as backup (for videos)
+            if (videoUrl) {
+                setTimeout(() => {
+                    if (!cutsceneScreen.classList.contains('hidden')) {
+                        cutsceneVideo.pause();
+                        cutsceneVideo.currentTime = 0;
+                        cutsceneVideo.src = '';
+                        afterCutscene(stage);
+                    }
+                }, 30000);
+            }
+        }
+        
+        function afterCutscene(stage) {
+            // Stop and reset video
+            const cutsceneVideo = document.getElementById('cutscene-video');
+            cutsceneVideo.pause();
+            cutsceneVideo.currentTime = 0;
+            cutsceneVideo.src = ''; // Clear source to fully stop
+            
+            // Hide cutscene screen
+            document.getElementById('cutscene-screen').classList.add('hidden');
+            
+            // If this was the intro cutscene, play stage 1 cutscene next
+            if (currentCutsceneType === 'intro') {
+                setTimeout(() => {
+                    playCutscene('stage', 1);
+                }, 200);
+            } else if (stage) {
+                // This was a stage cutscene, start the game
+                startStage(stage);
+            }
+        }
+        
+        function startStage(stage) {
+            // Hide all screens
+            document.getElementById('start-screen').classList.add('hidden');
+            document.getElementById('stage-complete-screen').classList.add('hidden');
+            
+            // Set stage
+            gameState.stage = stage;
+            
+            // Start the stage
+            startStageDirectly();
+        }
 
-        document.addEventListener('touchend', () => {
-            isDragging = false;
-        });
+        // ============================================
+        // SAVE/LOAD FUNCTIONS
+        // ============================================
+        
+        // Save/Load game functions
+        function saveGame() {
+            const saveData = {
+                stage: gameState.stage,
+                playerLives: gameState.playerLives,
+                playerAmmo: gameState.playerAmmo,
+                totalAmmoCollected: gameState.totalAmmoCollected,
+                highestStage: Math.max(gameState.stage, parseInt(localStorage.getItem('highestStage') || '1'))
+            };
+            localStorage.setItem('zombieGameSave', JSON.stringify(saveData));
+            localStorage.setItem('highestStage', saveData.highestStage.toString());
+            
+            // Show save indicator
+            const indicator = document.getElementById('save-indicator');
+            indicator.style.opacity = '1';
+            setTimeout(() => {
+                indicator.style.opacity = '0';
+            }, 2000);
+            
+            console.log('Game saved:', saveData);
+        }
 
-        // Background music functionality
-        const backgroundMusic = document.getElementById('background-music');
-        const musicToggle = document.getElementById('music-toggle');
-        let musicStarted = false;
+        function loadGame() {
+            const saveData = localStorage.getItem('zombieGameSave');
+            if (saveData) {
+                try {
+                    const data = JSON.parse(saveData);
+                    return data;
+                } catch (e) {
+                    console.error('Failed to load save data');
+                    return null;
+                }
+            }
+            return null;
+        }
 
-        // Set the music source
-        backgroundMusic.src = "https://github.com/TitanBusinessPros/Gameville/raw/main/Gameville%20Dreams.mp3";
+        function clearSave() {
+            localStorage.removeItem('zombieGameSave');
+        }
 
-        // Function to start music
-        function startMusic() {
-            if (!musicStarted) {
-                backgroundMusic.volume = 0.5; // Set volume to 50%
-                backgroundMusic.play().then(() => {
-                    musicStarted = true;
-                    musicToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
-                }).catch(error => {
-                    console.log('Audio play failed:', error);
+        function playStageMusic(stage) {
+            // Stop current music
+            if (backgroundMusic) {
+                backgroundMusic.pause();
+                backgroundMusic.currentTime = 0;
+            }
+
+            // Get music URL for this stage
+            const musicUrl = STAGE_MUSIC['stage' + stage];
+            
+            if (musicUrl) {
+                backgroundMusic = new Audio(musicUrl);
+                backgroundMusic.loop = true;
+                backgroundMusic.volume = 0.3;
+                
+                // Play music (handle autoplay restrictions)
+                backgroundMusic.play().catch(err => {
+                    console.log("Music autoplay prevented. Click to enable sound.");
                 });
             }
         }
 
-        // Event listeners for user interaction
-        document.addEventListener('touchstart', startMusic, { once: true });
-        document.addEventListener('scroll', startMusic, { once: true });
-        document.addEventListener('click', startMusic, { once: true });
-
-        // Toggle music on/off
-        musicToggle.addEventListener('click', function() {
-            if (backgroundMusic.paused) {
-                backgroundMusic.play();
-                musicToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
-            } else {
+        function stopStageMusic() {
+            if (backgroundMusic) {
                 backgroundMusic.pause();
-                musicToggle.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                backgroundMusic.currentTime = 0;
             }
+        }
+
+        // Initialize buildings with fixed positions
+        function initBuildings() {
+            buildings.length = 0;
+            for (let i = 0; i < BUILDING_POSITIONS.length; i++) {
+                buildings.push({
+                    id: i + 1,
+                    x: BUILDING_POSITIONS[i].x,
+                    y: BUILDING_POSITIONS[i].y,
+                    width: CONFIG.BUILDING_WIDTH,
+                    height: CONFIG.BUILDING_HEIGHT
+                });
+            }
+        }
+
+        // Check collision with buildings
+        function checkBuildingCollision(x, y, size) {
+            for (const building of buildings) {
+                if (x + size > building.x && 
+                    x - size < building.x + building.width &&
+                    y + size > building.y && 
+                    y - size < building.y + building.height) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // Get valid position avoiding buildings
+        function getValidPosition(size) {
+            let attempts = 0;
+            while (attempts < 100) {
+                const x = Math.random() * (CONFIG.CANVAS_WIDTH - size * 2) + size;
+                const y = Math.random() * (CONFIG.CANVAS_HEIGHT - size * 2) + size;
+                if (!checkBuildingCollision(x, y, size)) {
+                    return {x, y};
+                }
+                attempts++;
+            }
+            return {x: CONFIG.CANVAS_WIDTH / 2, y: CONFIG.CANVAS_HEIGHT / 2};
+        }
+
+        function setupEvents() {
+            window.addEventListener('keydown', (e) => {
+                if (gameState.gameRunning) {
+                    const key = e.key.toLowerCase();
+                    if (['w','a','s','d','arrowup','arrowdown','arrowleft','arrowright',' '].includes(key)) {
+                        e.preventDefault();
+                        keys.add(key);
+                        if (key === ' ') shoot();
+                    }
+                }
+            });
+            
+            window.addEventListener('keyup', (e) => keys.delete(e.key.toLowerCase()));
+            window.addEventListener('blur', () => keys.clear());
+            
+            canvas.addEventListener('mousemove', (e) => {
+                const r = canvas.getBoundingClientRect();
+                mouse.x = e.clientX - r.left;
+                mouse.y = e.clientY - r.top;
+            });
+            
+            canvas.addEventListener('mousedown', (e) => {
+                if (gameState.gameRunning) shoot();
+                e.preventDefault();
+            });
+            
+            canvas.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                if (e.deltaY < 0 && gameState.zoom < CONFIG.MAX_ZOOM) gameState.zoom += CONFIG.ZOOM_STEP;
+                else if (e.deltaY > 0 && gameState.zoom > CONFIG.MIN_ZOOM) gameState.zoom -= CONFIG.ZOOM_STEP;
+            }, {passive: false});
+            
+            document.getElementById('zoom-in').addEventListener('click', () => {
+                if (gameState.zoom < CONFIG.MAX_ZOOM) gameState.zoom += CONFIG.ZOOM_STEP;
+            });
+            
+            document.getElementById('zoom-out').addEventListener('click', () => {
+                if (gameState.zoom > CONFIG.MIN_ZOOM) gameState.zoom -= CONFIG.ZOOM_STEP;
+            });
+            
+            // Difficulty selection buttons
+            const difficultyButtons = {
+                easy: document.getElementById('easy-btn'),
+                medium: document.getElementById('medium-btn'),
+                hard: document.getElementById('hard-btn')
+            };
+            
+            Object.keys(difficultyButtons).forEach(difficulty => {
+                difficultyButtons[difficulty].addEventListener('click', () => {
+                    // Remove selected class from all buttons
+                    Object.values(difficultyButtons).forEach(btn => btn.classList.remove('selected'));
+                    // Add selected class to clicked button
+                    difficultyButtons[difficulty].classList.add('selected');
+                    // Apply difficulty settings
+                    applyDifficulty(difficulty);
+                });
+            });
+            
+            document.getElementById('start-btn').addEventListener('click', () => {
+                clearSave();  // Clear save when starting new game
+                // Play intro cutscene first, then it will trigger stage 1 cutscene
+                playCutscene('intro', 1);
+            });
+            
+            document.getElementById('restart-btn').addEventListener('click', restartGame);
+            document.getElementById('next-stage-btn').addEventListener('click', nextStage);
+            
+            document.getElementById('pause-btn').addEventListener('click', togglePause);
+            document.getElementById('resume-btn').addEventListener('click', togglePause);
+            document.getElementById('quit-btn').addEventListener('click', quitToMenu);
+            
+            // HUD toggle for mobile
+            document.getElementById('hud-toggle').addEventListener('click', () => {
+                const hud = document.getElementById('hud');
+                const toggle = document.getElementById('hud-toggle');
+                hud.classList.toggle('collapsed');
+                
+                if (hud.classList.contains('collapsed')) {
+                    toggle.textContent = '📊 STATS';
+                } else {
+                    toggle.textContent = '❌ CLOSE';
+                }
+            });
+            
+            // ESC key to pause
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && gameState.gameRunning && !gameState.gameOver && !gameState.stageComplete) {
+                    togglePause();
+                }
+            });
+            
+            // Prevent page visibility from stopping the game
+            document.addEventListener('visibilitychange', () => {
+                if (!document.hidden && gameState.gameRunning && !gameState.isPaused) {
+                    // Resume game loop if it stopped
+                    requestAnimationFrame(gameLoop);
+                }
+            });
+            
+            // Pinch-to-zoom for mobile
+            let lastTouchDistance = 0;
+            canvas.addEventListener('touchstart', (e) => {
+                if (e.touches.length === 2) {
+                    const dx = e.touches[0].clientX - e.touches[1].clientX;
+                    const dy = e.touches[0].clientY - e.touches[1].clientY;
+                    lastTouchDistance = Math.sqrt(dx * dx + dy * dy);
+                }
+            });
+            
+            canvas.addEventListener('touchmove', (e) => {
+                if (e.touches.length === 2) {
+                    e.preventDefault();
+                    const dx = e.touches[0].clientX - e.touches[1].clientX;
+                    const dy = e.touches[0].clientY - e.touches[1].clientY;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (lastTouchDistance > 0) {
+                        const delta = distance - lastTouchDistance;
+                        if (Math.abs(delta) > 5) {
+                            if (delta > 0) {
+                                // Pinch out = zoom in
+                                gameState.zoom = Math.min(CONFIG.MAX_ZOOM, gameState.zoom + CONFIG.ZOOM_STEP);
+                            } else {
+                                // Pinch in = zoom out
+                                gameState.zoom = Math.max(CONFIG.MIN_ZOOM, gameState.zoom - CONFIG.ZOOM_STEP);
+                            }
+                        }
+                    }
+                    lastTouchDistance = distance;
+                }
+            });
+            
+            canvas.addEventListener('touchend', (e) => {
+                if (e.touches.length < 2) {
+                    lastTouchDistance = 0;
+                }
+            });
+            
+            // Mobile joystick controls
+            setupMobileControls();
+        }
+
+        function setupMobileControls() {
+            const joystickArea = document.getElementById('joystick-area');
+            const joystickStick = document.getElementById('joystick-stick');
+            const shootButton = document.getElementById('shoot-button');
+            
+            let joystickActive = false;
+            let joystickId = null;
+            let joystickCenterX = 0;
+            let joystickCenterY = 0;
+            let moveDirection = { x: 0, y: 0 };
+            
+            joystickArea.addEventListener('touchstart', (e) => {
+                if (!gameState.gameRunning || gameState.isPaused) return;
+                e.preventDefault();
+                joystickActive = true;
+                joystickId = e.changedTouches[0].identifier;
+                const rect = joystickArea.getBoundingClientRect();
+                joystickCenterX = rect.left + rect.width / 2;
+                joystickCenterY = rect.top + rect.height / 2;
+            });
+            
+            joystickArea.addEventListener('touchmove', (e) => {
+                if (!joystickActive || !gameState.gameRunning || gameState.isPaused) return;
+                e.preventDefault();
+                
+                for (let touch of e.changedTouches) {
+                    if (touch.identifier === joystickId) {
+                        const deltaX = touch.clientX - joystickCenterX;
+                        const deltaY = touch.clientY - joystickCenterY;
+                        const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+                        const maxDistance = 60;
+                        
+                        let moveX = deltaX;
+                        let moveY = deltaY;
+                        
+                        if (distance > maxDistance) {
+                            moveX = (deltaX / distance) * maxDistance;
+                            moveY = (deltaY / distance) * maxDistance;
+                        }
+                        
+                        joystickStick.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px))`;
+                        
+                        // Store movement direction for continuous movement
+                        if (distance > 5) {
+                            moveDirection.x = deltaX / distance;
+                            moveDirection.y = deltaY / distance;
+                            moveDirection.strength = Math.min(distance / maxDistance, 1);
+                        } else {
+                            moveDirection.x = 0;
+                            moveDirection.y = 0;
+                            moveDirection.strength = 0;
+                        }
+                        
+                        break;
+                    }
+                }
+            });
+            
+            joystickArea.addEventListener('touchend', (e) => {
+                for (let touch of e.changedTouches) {
+                    if (touch.identifier === joystickId) {
+                        joystickActive = false;
+                        joystickId = null;
+                        joystickStick.style.transform = 'translate(-50%, -50%)';
+                        moveDirection.x = 0;
+                        moveDirection.y = 0;
+                        moveDirection.strength = 0;
+                        break;
+                    }
+                }
+            });
+            
+            // Apply continuous movement in update loop
+            window.applyJoystickMovement = function() {
+                if (moveDirection.strength > 0 && gameState.gameRunning && !gameState.isPaused) {
+                    const newX = player.x + moveDirection.x * player.speed * moveDirection.strength;
+                    const newY = player.y + moveDirection.y * player.speed * moveDirection.strength;
+                    
+                    // Check building collision
+                    if (!checkBuildingCollision(newX, newY, player.size)) {
+                        player.x = newX;
+                        player.y = newY;
+                    } else {
+                        // Try sliding along walls
+                        if (!checkBuildingCollision(newX, player.y, player.size)) {
+                            player.x = newX;
+                        } else if (!checkBuildingCollision(player.x, newY, player.size)) {
+                            player.y = newY;
+                        }
+                    }
+                    
+                    // Keep player in bounds
+                    player.x = Math.max(player.size, Math.min(CONFIG.CANVAS_WIDTH - player.size, player.x));
+                    player.y = Math.max(player.size, Math.min(CONFIG.CANVAS_HEIGHT - player.size, player.y));
+                }
+            };
+            
+            // Shoot button
+            shootButton.addEventListener('touchstart', (e) => {
+                if (!gameState.gameRunning || gameState.isPaused) return;
+                e.preventDefault();
+                autoAimAndShoot();  // Use auto-aim on mobile
+            });
+        }
+
+        function togglePause() {
+            if (!gameState.gameRunning || gameState.gameOver || gameState.stageComplete) return;
+            
+            gameState.isPaused = !gameState.isPaused;
+            const pauseScreen = document.getElementById('pause-screen');
+            
+            if (gameState.isPaused) {
+                // Update pause screen info
+                document.getElementById('pause-stage').textContent = gameState.stage;
+                document.getElementById('pause-zombies').textContent = gameState.zombiesLeft;
+                document.getElementById('pause-lives').textContent = gameState.playerLives;
+                document.getElementById('pause-ammo').textContent = gameState.playerAmmo;
+                pauseScreen.classList.remove('hidden');
+                
+                // Pause music
+                if (backgroundMusic) {
+                    backgroundMusic.pause();
+                }
+            } else {
+                pauseScreen.classList.add('hidden');
+                
+                // Resume music
+                if (backgroundMusic) {
+                    backgroundMusic.play().catch(err => console.log("Music resume failed"));
+                }
+            }
+        }
+
+        function quitToMenu() {
+            gameState.isPaused = false;
+            gameState.gameRunning = false;
+            stopStageMusic();
+            document.getElementById('pause-screen').classList.add('hidden');
+            document.getElementById('start-screen').classList.remove('hidden');
+            saveGame();
+        }
+
+        async function initGame() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            await preloadAssets();
+            initBuildings();
+            spawnInitialZombies();
+            spawnHiddenAmmo();
+            spawnBoss();  // Spawn boss on every stage
+            updateHUD();
+            updateLivesDisplay();
+            setupEvents();
+            
+            // Prevent mobile from sleeping/pausing
+            if ('wakeLock' in navigator) {
+                navigator.wakeLock.request('screen').catch(err => {
+                    console.log('Wake lock not supported:', err);
+                });
+            }
+            
+            // Keep screen active on mobile
+            let keepAliveInterval = setInterval(() => {
+                if (gameState.gameRunning && !gameState.isPaused) {
+                    // Dummy operation to keep JS active
+                    const dummy = Date.now();
+                }
+            }, 5000);
+            
+            // Check for save data
+            const saveData = loadGame();
+            const continueBtn = document.getElementById('continue-btn');
+            if (saveData && saveData.stage > 1) {
+                continueBtn.classList.remove('hidden');
+                continueBtn.addEventListener('click', () => {
+                    // Load saved game
+                    gameState.stage = saveData.stage;
+                    gameState.playerLives = saveData.playerLives;
+                    gameState.playerAmmo = saveData.playerAmmo;
+                    gameState.totalAmmoCollected = saveData.totalAmmoCollected;
+                    gameState.zombiesLeft = CONFIG.ZOMBIES_PER_STAGE[gameState.stage - 1];
+                    
+                    // Reset for current stage
+                    zombies.length = 0;
+                    bosses.length = 0;
+                    ammoPacks.length = 0;
+                    spawnInitialZombies();
+                    spawnHiddenAmmo();
+                    spawnBoss();
+                    updateHUD();
+                    updateLivesDisplay();
+                    
+                    document.getElementById('start-screen').classList.add('hidden');
+                    gameState.gameRunning = true;
+                    playStageMusic(gameState.stage);
+                });
+            }
+            
+            requestAnimationFrame(gameLoop);
+        }
+
+        function spawnInitialZombies() {
+            const n = Math.min(30, gameState.zombiesLeft);
+            for (let i = 0; i < n; i++) spawnZombie();
+            
+            // Always spawn zombie 8 and 9 on every stage
+            spawnGhostZombie(8);
+            spawnGhostZombie(9);
+        }
+
+        function spawnGhostZombie(type) {
+            const side = Math.floor(Math.random() * 4);
+            let x, y;
+            switch(side) {
+                case 0: x = -50; y = Math.random() * CONFIG.CANVAS_HEIGHT; break;
+                case 1: x = CONFIG.CANVAS_WIDTH + 50; y = Math.random() * CONFIG.CANVAS_HEIGHT; break;
+                case 2: x = Math.random() * CONFIG.CANVAS_WIDTH; y = -50; break;
+                case 3: x = Math.random() * CONFIG.CANVAS_WIDTH; y = CONFIG.CANVAS_HEIGHT + 50; break;
+            }
+            
+            zombies.push({
+                x, y,
+                size: CONFIG.ZOMBIE_SIZE,
+                speed: CONFIG.ZOMBIE_SPEED_MIN + Math.random() * (CONFIG.ZOMBIE_SPEED_MAX - CONFIG.ZOMBIE_SPEED_MIN),
+                type: type,
+                health: 50 + Math.floor(Math.random() * 50),
+                canPassThroughBuildings: true,
+                isGhost: true
+            });
+        }
+
+        function spawnZombie() {
+            if (gameState.zombiesLeft <= 0) return;
+            const side = Math.floor(Math.random() * 4);
+            let x, y;
+            switch(side) {
+                case 0: x = -50; y = Math.random() * CONFIG.CANVAS_HEIGHT; break;
+                case 1: x = CONFIG.CANVAS_WIDTH + 50; y = Math.random() * CONFIG.CANVAS_HEIGHT; break;
+                case 2: x = Math.random() * CONFIG.CANVAS_WIDTH; y = -50; break;
+                case 3: x = Math.random() * CONFIG.CANVAS_WIDTH; y = CONFIG.CANVAS_HEIGHT + 50; break;
+            }
+            
+            // Determine zombie types based on stage
+            let maxZombieType;
+            switch(gameState.stage) {
+                case 1: maxZombieType = 3; break;   // Zombies 1-3
+                case 2: maxZombieType = 4; break;   // Zombies 1-4
+                case 3: maxZombieType = 6; break;   // Zombies 1-6
+                case 4: maxZombieType = 8; break;   // Zombies 1-8
+                case 5: maxZombieType = 9; break;   // Zombies 1-9
+                case 6: maxZombieType = 10; break;  // All zombies 1-10
+                case 7: maxZombieType = 11; break;  // All zombies 1-11
+                case 8: maxZombieType = 12; break;  // All zombies 1-12
+                case 9: maxZombieType = 13; break;  // All zombies 1-13
+                case 10: maxZombieType = 14; break; // All zombies 1-14
+                default: maxZombieType = 3; break;
+            }
+            
+            const zombieType = Math.floor(Math.random() * maxZombieType) + 1;
+            
+            zombies.push({
+                x, y,
+                size: CONFIG.ZOMBIE_SIZE,
+                speed: CONFIG.ZOMBIE_SPEED_MIN + Math.random() * (CONFIG.ZOMBIE_SPEED_MAX - CONFIG.ZOMBIE_SPEED_MIN),
+                type: zombieType,
+                health: 50 + Math.floor(Math.random() * 50),
+                canPassThroughBuildings: (zombieType === 8 || zombieType === 9)  // Zombies 8 & 9 are ghosts
+            });
+            gameState.zombiesLeft--;
+        }
+
+        function spawnHiddenAmmo() {
+            for (let i = 0; i < CONFIG.HIDDEN_AMMO_COUNT; i++) {
+                const pos = getValidPosition(15);
+                ammoPacks.push({
+                    x: pos.x,
+                    y: pos.y,
+                    amount: 5 + Math.floor(Math.random() * 10)
+                });
+            }
+        }
+
+        function spawnBoss() {
+            bosses.length = 0;  // Clear any existing bosses
+            
+            // Boss health triples each stage
+            const baseHealth = 2400;
+            const bossHealth = baseHealth * Math.pow(3, gameState.stage - 1);
+            
+            // Determine number of bosses
+            let bossCount = 1;
+            let bossIds = [gameState.stage];  // Default: use stage number as boss ID
+            
+            if (gameState.stage >= 6 && gameState.stage <= 7) {
+                bossCount = 2;
+                bossIds = [gameState.stage, gameState.stage];  // Two of the same boss
+            } else if (gameState.stage === 8 || gameState.stage === 9) {
+                bossCount = 3;  // 3 bosses on stages 8 and 9
+                bossIds = [gameState.stage, gameState.stage, gameState.stage];
+            } else if (gameState.stage === 10) {
+                bossCount = 3;
+                bossIds = [10, 11, 12];  // Three different bosses
+            }
+            
+            // Spawn bosses at different positions
+            for (let i = 0; i < bossCount; i++) {
+                const xOffset = (i - (bossCount - 1) / 2) * 300;
+                bosses.push({
+                    x: CONFIG.CANVAS_WIDTH / 2 + xOffset,
+                    y: 100 + (i * 50),
+                    size: CONFIG.ZOMBIE_SIZE * 3,
+                    speed: CONFIG.BOSS_SPEED,
+                    health: bossHealth,
+                    maxHealth: bossHealth,
+                    stage: gameState.stage,
+                    bossId: bossIds[i],
+                    soundPlayed: false
+                });
+            }
+            
+            gameState.bossActive = true;
+        }
+
+        function gameLoop() {
+            try {
+                if (gameState.gameRunning && !gameState.gameOver && !gameState.stageComplete && !gameState.isPaused) {
+                    update();
+                    draw();
+                    
+                    // Check stage completion - only count non-ghost zombies
+                    const nonGhostZombies = zombies.filter(z => !z.isGhost);
+                    const regularZombiesGone = gameState.zombiesLeft <= 0 && nonGhostZombies.length === 0;
+                    const bossDefeated = !gameState.bossActive || bosses.length === 0;
+                    
+                    if (regularZombiesGone && bossDefeated) {
+                        completeStage();
+                    }
+                    
+                    // Spawn regular zombies
+                    if (gameState.zombiesLeft > 0 && zombies.length < 50 && Math.random() < 0.05) {
+                        spawnZombie();
+                    }
+                    
+                    // Spawn ghost zombies periodically (10% chance when spawning)
+                    if (zombies.length < 50 && Math.random() < 0.01) {
+                        const ghostType = Math.random() < 0.5 ? 8 : 9;
+                        spawnGhostZombie(ghostType);
+                    }
+                } else if (gameState.isPaused) {
+                    // Still draw when paused
+                    draw();
+                }
+            } catch (err) {
+                console.error('Game loop error:', err);
+                // Continue running even if error occurs
+            }
+            requestAnimationFrame(gameLoop);
+        }
+
+        function update() {
+            try { updatePlayer(); } catch (e) { console.error('updatePlayer error:', e); }
+            try {
+                if (window.applyJoystickMovement) {
+                    window.applyJoystickMovement();
+                }
+            } catch (e) { console.error('applyJoystickMovement error:', e); }
+            try { updateZombies(); } catch (e) { console.error('updateZombies error:', e); }
+            try { updateBoss(); } catch (e) { console.error('updateBoss error:', e); }
+            try { updateCoconutBombs(); } catch (e) { console.error('updateCoconutBombs error:', e); }
+            try { updateAcidPukes(); } catch (e) { console.error('updateAcidPukes error:', e); }
+            try { updateAmmo(); } catch (e) { console.error('updateAmmo error:', e); }
+            try { updateBulletTraces(); } catch (e) { console.error('updateBulletTraces error:', e); }
+            try { updateHUD(); } catch (e) { console.error('updateHUD error:', e); }
+            try {
+                if (gameState.isInvincible && Date.now() - gameState.lastHitTime > CONFIG.INVINCIBILITY_TIME) {
+                    gameState.isInvincible = false;
+                }
+            } catch (e) { console.error('invincibility error:', e); }
+        }
+
+        function updateBoss() {
+            if (!gameState.bossActive) return;
+            
+            for (let i = bosses.length - 1; i >= 0; i--) {
+                const boss = bosses[i];
+                
+                // Move towards player
+                const dx = player.x - boss.x;
+                const dy = player.y - boss.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance > 0) {
+                    // Boss can pass through buildings
+                    boss.x += (dx / distance) * boss.speed;
+                    boss.y += (dy / distance) * boss.speed;
+                }
+                
+                // Throw coconut bomb at player
+                const now = Date.now();
+                if (!boss.lastBombTime) boss.lastBombTime = now;
+                if (now - boss.lastBombTime > BOMB_CONFIG.THROW_INTERVAL) {
+                    throwCoconutBomb(boss, player.x, player.y);
+                    boss.lastBombTime = now;
+                }
+                
+                // Play boss sound when near player (200 pixels)
+                if (distance < 200 && !boss.soundPlayed) {
+                    playBossSound();
+                    boss.soundPlayed = true;
+                }
+                
+                // Reset sound flag when boss moves away
+                if (distance > 250) {
+                    boss.soundPlayed = false;
+                }
+                
+                // Check collision with player
+                if (!gameState.isInvincible && distance < player.size + boss.size) {
+                    takeDamage();
+                }
+                
+                // Check if boss is dead
+                if (boss.health <= 0) {
+                    bloodSplatters.push({x: boss.x, y: boss.y, size: 30 + Math.random() * 20, alpha: 1});
+                    // Boss drops lots of ammo
+                    ammoPacks.push({x: boss.x, y: boss.y, amount: 30});
+                    
+                    // Award +1 life for killing boss (max 5 lives)
+                    if (gameState.playerLives < 5) {
+                        gameState.playerLives++;
+                        updateLivesDisplay();
+                    }
+                    
+                    bosses.splice(i, 1);
+                }
+            }
+            
+            // If all bosses are dead, deactivate boss mode
+            if (bosses.length === 0) {
+                gameState.bossActive = false;
+            }
+        }
+
+        function playBossSound() {
+            try {
+                const ac = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ac.createOscillator(), gain = ac.createGain();
+                osc.connect(gain);
+                gain.connect(ac.destination);
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(80, ac.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(40, ac.currentTime + 0.5);
+                gain.gain.setValueAtTime(0.4, ac.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ac.currentTime + 0.5);
+                osc.start(ac.currentTime);
+                osc.stop(ac.currentTime + 0.5);
+            } catch(e) {}
+        }
+        
+        // ============================================
+        // COCONUT BOMB SYSTEM
+        // ============================================
+        
+        function throwCoconutBomb(boss, targetX, targetY) {
+            const dx = targetX - boss.x;
+            const dy = targetY - boss.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            coconutBombs.push({
+                x: boss.x,
+                y: boss.y,
+                vx: (dx / distance) * BOMB_CONFIG.SPEED,
+                vy: (dy / distance) * BOMB_CONFIG.SPEED,
+                thrownTime: Date.now(),
+                size: BOMB_CONFIG.SIZE
+            });
+        }
+        
+        function updateCoconutBombs() {
+            const now = Date.now();
+            
+            for (let i = coconutBombs.length - 1; i >= 0; i--) {
+                const bomb = coconutBombs[i];
+                
+                // Move bomb
+                bomb.x += bomb.vx;
+                bomb.y += bomb.vy;
+                
+                // Check if bomb should explode (after fuse time)
+                if (now - bomb.thrownTime > BOMB_CONFIG.FUSE_TIME) {
+                    explodeCoconutBomb(bomb);
+                    coconutBombs.splice(i, 1);
+                    continue;
+                }
+                
+                // Remove if off screen
+                if (bomb.x < -100 || bomb.x > CONFIG.CANVAS_WIDTH + 100 ||
+                    bomb.y < -100 || bomb.y > CONFIG.CANVAS_HEIGHT + 100) {
+                    coconutBombs.splice(i, 1);
+                }
+            }
+        }
+        
+        function explodeCoconutBomb(bomb) {
+            // Play explosion sound
+            playExplosionSound();
+            
+            // Create explosion visual effect
+            for (let i = 0; i < 20; i++) {
+                const angle = (Math.PI * 2 * i) / 20;
+                const distance = Math.random() * BOMB_CONFIG.EXPLOSION_RADIUS;
+                bloodSplatters.push({
+                    x: bomb.x + Math.cos(angle) * distance,
+                    y: bomb.y + Math.sin(angle) * distance,
+                    size: 10 + Math.random() * 15,
+                    alpha: 1,
+                    color: 'rgba(255, 150, 0, 0.8)'  // Orange explosion color
+                });
+            }
+            
+            // Check if player is in explosion radius
+            const dx = player.x - bomb.x;
+            const dy = player.y - bomb.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < BOMB_CONFIG.EXPLOSION_RADIUS && !gameState.isInvincible) {
+                takeDamage();
+            }
+        }
+        
+        function playExplosionSound() {
+            try {
+                const ac = new (window.AudioContext || window.webkitAudioContext)();
+                
+                // Low boom
+                const o1 = ac.createOscillator();
+                const g1 = ac.createGain();
+                o1.connect(g1);
+                g1.connect(ac.destination);
+                o1.frequency.value = 60;
+                g1.gain.value = 0.3;
+                o1.start(0);
+                g1.gain.exponentialRampToValueAtTime(0.00001, ac.currentTime + 0.4);
+                o1.stop(ac.currentTime + 0.4);
+                
+                // High crackle
+                const o2 = ac.createOscillator();
+                const g2 = ac.createGain();
+                o2.connect(g2);
+                g2.connect(ac.destination);
+                o2.type = 'sawtooth';
+                o2.frequency.value = 200;
+                g2.gain.value = 0.15;
+                o2.start(0);
+                g2.gain.exponentialRampToValueAtTime(0.00001, ac.currentTime + 0.2);
+                o2.stop(ac.currentTime + 0.2);
+            } catch(e) {}
+        }
+        
+        // ============================================
+        // ACID PUKE SYSTEM (Zombies 1, 2, 3)
+        // ============================================
+        
+        function pukeAcid(zombie, targetX, targetY) {
+            // Determine puke color based on zombie type
+            let pukeColor;
+            if (zombie.type >= 1 && zombie.type <= 3) {
+                pukeColor = { r: 0, g: 255, b: 0 };  // Green
+            } else if (zombie.type >= 4 && zombie.type <= 6) {
+                pukeColor = { r: 255, g: 0, b: 0 };  // Red
+            } else if (zombie.type >= 7 && zombie.type <= 9) {
+                pukeColor = { r: 0, g: 100, b: 255 };  // Blue
+            } else if (zombie.type >= 10 && zombie.type <= 14) {
+                pukeColor = { r: 255, g: 255, b: 0 };  // Yellow
+            } else {
+                pukeColor = { r: 0, g: 255, b: 0 };  // Default green
+            }
+            
+            // Play puke sound
+            playPukeSound();
+            
+            // Create acid splash on ground at target location
+            acidPukes.push({
+                x: targetX,
+                y: targetY,
+                radius: ACID_CONFIG.SPLASH_RADIUS,
+                createdTime: Date.now(),
+                alpha: 1,
+                color: pukeColor
+            });
+            
+            // Create visual splash particles
+            for (let i = 0; i < 15; i++) {
+                const angle = (Math.PI * 2 * i) / 15;
+                const distance = Math.random() * ACID_CONFIG.SPLASH_RADIUS;
+                bloodSplatters.push({
+                    x: targetX + Math.cos(angle) * distance,
+                    y: targetY + Math.sin(angle) * distance,
+                    size: 8 + Math.random() * 12,
+                    alpha: 1,
+                    color: `rgba(${pukeColor.r}, ${pukeColor.g}, ${pukeColor.b}, 0.7)`
+                });
+            }
+        }
+        
+        function updateAcidPukes() {
+            const now = Date.now();
+            
+            for (let i = acidPukes.length - 1; i >= 0; i--) {
+                const acid = acidPukes[i];
+                
+                // Check if player is in splash radius
+                const dx = player.x - acid.x;
+                const dy = player.y - acid.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < acid.radius && !gameState.isInvincible) {
+                    takeDamage();
+                }
+                
+                // Fade out over time
+                const age = now - acid.createdTime;
+                acid.alpha = 1 - (age / ACID_CONFIG.SPLASH_DURATION);
+                
+                // Remove after duration
+                if (age > ACID_CONFIG.SPLASH_DURATION) {
+                    acidPukes.splice(i, 1);
+                }
+            }
+        }
+        
+        function playPukeSound() {
+            try {
+                const ac = new (window.AudioContext || window.webkitAudioContext)();
+                
+                // Gurgling low sound
+                const o1 = ac.createOscillator();
+                const g1 = ac.createGain();
+                o1.connect(g1);
+                g1.connect(ac.destination);
+                o1.type = 'sawtooth';
+                o1.frequency.value = 120;
+                o1.frequency.exponentialRampToValueAtTime(80, ac.currentTime + 0.3);
+                g1.gain.value = 0.2;
+                g1.gain.exponentialRampToValueAtTime(0.00001, ac.currentTime + 0.3);
+                o1.start(0);
+                o1.stop(ac.currentTime + 0.3);
+            } catch(e) {}
+        }
+
+
+        function updatePlayer() {
+            let dx = 0, dy = 0;
+            if (keys.has('w') || keys.has('arrowup')) dy -= 1;
+            if (keys.has('s') || keys.has('arrowdown')) dy += 1;
+            if (keys.has('a') || keys.has('arrowleft')) dx -= 1;
+            if (keys.has('d') || keys.has('arrowright')) dx += 1;
+            if (dx && dy) { dx *= 0.707; dy *= 0.707; }
+            
+            // Calculate new position
+            let newX = player.x + dx * player.speed;
+            let newY = player.y + dy * player.speed;
+            
+            // Keep within bounds
+            newX = Math.max(player.size, Math.min(CONFIG.CANVAS_WIDTH - player.size, newX));
+            newY = Math.max(player.size, Math.min(CONFIG.CANVAS_HEIGHT - player.size, newY));
+            
+            // Check building collision
+            if (!checkBuildingCollision(newX, newY, player.size)) {
+                player.x = newX;
+                player.y = newY;
+            } else {
+                // Try sliding along walls
+                if (!checkBuildingCollision(newX, player.y, player.size)) {
+                    player.x = newX;
+                } else if (!checkBuildingCollision(player.x, newY, player.size)) {
+                    player.y = newY;
+                }
+            }
+            
+            const wmx = (mouse.x / gameState.zoom) + player.x - (canvas.width / 2 / gameState.zoom);
+            const wmy = (mouse.y / gameState.zoom) + player.y - (canvas.height / 2 / gameState.zoom);
+            player.angle = Math.atan2(wmy - player.y, wmx - player.x);
+        }
+
+        function updateZombies() {
+            const now = Date.now();
+            
+            for (let i = zombies.length - 1; i >= 0; i--) {
+                const z = zombies[i];
+                const dx = player.x - z.x, dy = player.y - z.y;
+                const d = Math.sqrt(dx*dx + dy*dy);
+                
+                // All zombies (except ghosts) can puke acid
+                if (!z.isGhost) {
+                    if (!z.lastPukeTime) z.lastPukeTime = now;
+                    
+                    // Zombies 1-3 puke every 5 seconds, others every 10 seconds
+                    const pukeInterval = (z.type === 1 || z.type === 2 || z.type === 3) 
+                        ? ACID_CONFIG.PUKE_INTERVAL_FAST 
+                        : ACID_CONFIG.PUKE_INTERVAL_SLOW;
+                    
+                    // Puke at interval OR when close to player
+                    const shouldPuke = (now - z.lastPukeTime > pukeInterval) || 
+                                      (d < ACID_CONFIG.CLOSE_RANGE && now - z.lastPukeTime > 2000);
+                    
+                    if (shouldPuke && d < ACID_CONFIG.RANGE) {
+                        pukeAcid(z, player.x, player.y);
+                        z.lastPukeTime = now;
+                    }
+                }
+                
+                if (d > 0) {
+                    const newX = z.x + (dx/d) * z.speed;
+                    const newY = z.y + (dy/d) * z.speed;
+                    
+                    // Zombies 8 and 9 can pass through buildings
+                    if (z.canPassThroughBuildings) {
+                        z.x = newX;
+                        z.y = newY;
+                    } else {
+                        // Check building collision for normal zombies
+                        if (!checkBuildingCollision(newX, newY, z.size)) {
+                            z.x = newX;
+                            z.y = newY;
+                        } else {
+                            // Try to slide around buildings
+                            if (!checkBuildingCollision(newX, z.y, z.size)) {
+                                z.x = newX;
+                            } else if (!checkBuildingCollision(z.x, newY, z.size)) {
+                                z.y = newY;
+                            }
+                        }
+                    }
+                }
+                
+                if (!gameState.isInvincible && d < player.size + z.size) takeDamage();
+                if (z.health <= 0) {
+                    if (Math.random() < CONFIG.AMMO_DROP_CHANCE) {
+                        ammoPacks.push({x: z.x, y: z.y, amount: 2 + Math.floor(Math.random() * 4)});
+                    }
+                    bloodSplatters.push({x: z.x, y: z.y, size: 10 + Math.random() * 15, alpha: 1});
+                    zombies.splice(i, 1);
+                    // Ghost zombies don't count toward stage zombies
+                    if (!z.isGhost) {
+                        gameState.zombiesKilled++;
+                    }
+                }
+            }
+        }
+
+        function takeDamage() {
+            gameState.playerLives--;
+            gameState.lastHitTime = Date.now();
+            gameState.isInvincible = true;
+            updateLivesDisplay();
+            for (let i = 0; i < 5; i++) {
+                bloodSplatters.push({
+                    x: player.x + (Math.random() - 0.5) * 40,
+                    y: player.y + (Math.random() - 0.5) * 40,
+                    size: 3 + Math.random() * 5,
+                    alpha: 0.8
+                });
+            }
+            if (gameState.playerLives <= 0) gameOver();
+        }
+
+        function updateAmmo() {
+            for (let i = ammoPacks.length - 1; i >= 0; i--) {
+                const a = ammoPacks[i];
+                const dx = player.x - a.x, dy = player.y - a.y;
+                const d = Math.sqrt(dx*dx + dy*dy);
+                if (d < player.size + 15) {
+                    gameState.playerAmmo += a.amount;
+                    gameState.totalAmmoCollected += a.amount;
+                    ammoPacks.splice(i, 1);
+                }
+            }
+        }
+
+        function updateBulletTraces() {
+            for (let i = bulletTraces.length - 1; i >= 0; i--) {
+                bulletTraces[i].life -= 0.05;
+                if (bulletTraces[i].life <= 0) bulletTraces.splice(i, 1);
+            }
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const vx = player.x - canvas.width / (2 * gameState.zoom);
+            const vy = player.y - canvas.height / (2 * gameState.zoom);
+            
+            ctx.save();
+            ctx.scale(gameState.zoom, gameState.zoom);
+            ctx.translate(-vx, -vy);
+            
+            // Background - use stage-specific tile
+            const tileKey = 'groundTile' + gameState.stage;
+            if (IMG[tileKey] && IMG[tileKey].complete && IMG[tileKey].naturalWidth > 0 && SPRITES[tileKey]) {
+                const pattern = ctx.createPattern(IMG[tileKey], 'repeat');
+                ctx.fillStyle = pattern;
+            } else {
+                ctx.fillStyle = '#1a3a1a';
+            }
+            ctx.fillRect(0, 0, CONFIG.CANVAS_WIDTH, CONFIG.CANVAS_HEIGHT);
+            
+            // Draw buildings (LAZY LOADED)
+for (let i = 0; i < buildings.length; i++) {
+    const b = buildings[i];
+    const key = 'building' + b.id;
+
+    // ✅ LAZY LOAD TRIGGER
+    loadImageIfNeeded(key);
+
+    const buildingImg = IMG[key];
+
+    if (buildingImg && buildingImg.complete && buildingImg.naturalWidth > 0 && SPRITES[key]) {
+        ctx.drawImage(buildingImg, b.x, b.y, b.width, b.height);
+    } else {
+        ctx.fillStyle = '#555577';
+        ctx.fillRect(b.x, b.y, b.width, b.height);
+        ctx.strokeStyle = '#333';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(b.x, b.y, b.width, b.height);
+    }
+}
+
+            
+            // Ammo
+            for (const a of ammoPacks) {
+               loadImageIfNeeded('ammo');
+                if (IMG.ammo && IMG.ammo.complete && IMG.ammo.naturalWidth > 0 && SPRITES.ammo) {
+                    ctx.drawImage(IMG.ammo, a.x - 15, a.y - 15, 30, 30);
+                } else {
+                    ctx.fillStyle = '#fd6';
+                    ctx.beginPath();
+                    ctx.arc(a.x, a.y, 10, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                ctx.fillStyle = '#000';
+                ctx.font = 'bold 12px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('+' + a.amount, a.x, a.y);
+            }
+            
+            // Bullets
+            for (const t of bulletTraces) {
+                ctx.strokeStyle = `rgba(255,255,0,${t.life})`;
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(t.start.x, t.start.y);
+                ctx.lineTo(t.end.x, t.end.y);
+                ctx.stroke();
+            }
+            
+            // Blood
+            for (let i = bloodSplatters.length - 1; i >= 0; i--) {
+                const s = bloodSplatters[i];
+                const color = s.color || `rgba(139,0,0,${s.alpha})`;
+                ctx.fillStyle = color.includes('rgba') ? color.replace(/[\d.]+\)$/, `${s.alpha})`) : `rgba(139,0,0,${s.alpha})`;
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+                ctx.fill();
+                s.alpha -= 0.01;
+                if (s.alpha <= 0) bloodSplatters.splice(i, 1);
+            }
+            
+            // Zombies
+            for (const z of zombies) {
+                // Add this line before drawing the zombie
+                loadImageIfNeeded('zombie' + z.type);
+                const zi = IMG['zombie' + z.type];
+                
+                // Make ghost zombies (8 & 9) semi-transparent
+                if (z.canPassThroughBuildings) {
+                    ctx.globalAlpha = 0.7;
+                }
+                
+                if (zi && zi.complete && zi.naturalWidth > 0 && SPRITES['zombie' + z.type]) {
+                    ctx.save();
+                    ctx.translate(z.x, z.y);
+                    ctx.drawImage(zi, -z.size/2, -z.size/2, z.size, z.size);
+                    ctx.restore();
+                } else {
+                    const hue = (z.type * 20) % 360;
+                    ctx.fillStyle = `hsl(${hue},70%,40%)`;
+                    ctx.beginPath();
+                    ctx.arc(z.x, z.y, z.size/2, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                
+                // Reset alpha
+                ctx.globalAlpha = 1;
+                
+                const hp = Math.max(0, z.health / 100);
+                ctx.fillStyle = '#f00';
+                ctx.fillRect(z.x - 20, z.y - 35, 40, 5);
+                ctx.fillStyle = '#0f0';
+                ctx.fillRect(z.x - 20, z.y - 35, 40 * hp, 5);
+            }
+            
+            // Bosses
+            if (gameState.bossActive && bosses.length > 0) {
+                for (const boss of bosses) {
+                    const bossImg = IMG['boss' + boss.bossId];
+                    
+                    // Make boss semi-transparent (ghost effect)
+                    ctx.globalAlpha = 0.8;
+                    
+                    if (bossImg && bossImg.complete && bossImg.naturalWidth > 0 && SPRITES['boss' + boss.bossId]) {
+                        ctx.save();
+                        ctx.translate(boss.x, boss.y);
+                        ctx.drawImage(bossImg, -boss.size/2, -boss.size/2, boss.size, boss.size);
+                        ctx.restore();
+                    } else {
+                        // Fallback color changes per boss
+                        const colors = ['#8b0000', '#8b008b', '#ff4500', '#ff8c00', '#ff0000', '#dc143c', '#b22222', '#8b0000', '#a52a2a', '#800000', '#660000', '#4d0000'];
+                        ctx.fillStyle = colors[boss.bossId - 1] || '#8b0000';
+                        ctx.beginPath();
+                        ctx.arc(boss.x, boss.y, boss.size/2, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                    
+                    // Reset alpha
+                    ctx.globalAlpha = 1;
+                    
+                    // Boss health bar (bigger)
+                    const bossHp = Math.max(0, boss.health / boss.maxHealth);
+                    ctx.fillStyle = '#000';
+                    ctx.fillRect(boss.x - 60, boss.y - boss.size/2 - 20, 120, 10);
+                    ctx.fillStyle = '#ff0000';
+                    ctx.fillRect(boss.x - 60, boss.y - boss.size/2 - 20, 120 * bossHp, 10);
+                }
+            }
+            
+            // Draw coconut bombs
+            for (const bomb of coconutBombs) {
+                const bombImg = IMG.coconutBomb;
+                
+                if (bombImg && bombImg.complete && bombImg.naturalWidth > 0) {
+                    ctx.save();
+                    ctx.translate(bomb.x, bomb.y);
+                    // Rotate bomb as it flies
+                    const rotation = (Date.now() - bomb.thrownTime) / 100;
+                    ctx.rotate(rotation);
+                    ctx.drawImage(bombImg, -bomb.size/2, -bomb.size/2, bomb.size, bomb.size);
+                    ctx.restore();
+                } else {
+                    // Fallback: brown circle
+                    ctx.fillStyle = '#654321';
+                    ctx.beginPath();
+                    ctx.arc(bomb.x, bomb.y, bomb.size/2, 0, Math.PI * 2);
+                    ctx.fill();
+                    
+                    // Fuse spark
+                    ctx.fillStyle = '#ff4500';
+                    ctx.beginPath();
+                    ctx.arc(bomb.x, bomb.y - bomb.size/2, 3, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+            
+            // Draw acid splashes (ground pools)
+            for (const acid of acidPukes) {
+                const c = acid.color || { r: 0, g: 255, b: 0 };  // Default green
+                
+                // Draw fading splash circle on ground
+                ctx.fillStyle = `rgba(${c.r}, ${c.g}, ${c.b}, ${acid.alpha * 0.4})`;
+                ctx.beginPath();
+                ctx.arc(acid.x, acid.y, acid.radius, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // Inner brighter circle
+                const brightR = Math.min(255, c.r + 50);
+                const brightG = Math.min(255, c.g + 50);
+                const brightB = Math.min(255, c.b + 50);
+                ctx.fillStyle = `rgba(${brightR}, ${brightG}, ${brightB}, ${acid.alpha * 0.6})`;
+                ctx.beginPath();
+                ctx.arc(acid.x, acid.y, acid.radius * 0.6, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // Glowing edge
+                ctx.strokeStyle = `rgba(${c.r}, ${c.g}, ${c.b}, ${acid.alpha * 0.8})`;
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                ctx.arc(acid.x, acid.y, acid.radius, 0, Math.PI * 2);
+                ctx.stroke();
+            }
+            
+            // Player
+            ctx.save();
+            ctx.translate(player.x, player.y);
+            ctx.rotate(player.angle);
+            if (IMG.player && IMG.player.complete && IMG.player.naturalWidth > 0 && SPRITES.player) {
+                if (gameState.isInvincible && Math.floor(Date.now()/200) % 2 === 0) ctx.globalAlpha = 0.5;
+                ctx.drawImage(IMG.player, -player.size/2, -player.size/2, player.size, player.size);
+                ctx.globalAlpha = 1;
+            } else {
+                if (gameState.isInvincible && Math.floor(Date.now()/200) % 2 === 0) ctx.fillStyle = 'rgba(255,100,100,0.7)';
+                else ctx.fillStyle = '#4ecdc4';
+                ctx.beginPath();
+                ctx.arc(0, 0, player.size/2, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            // Only show gun on desktop (not mobile)
+            if (window.innerWidth > 768) {
+                ctx.fillStyle = '#8b4513';
+                ctx.fillRect(player.size/3, -3, 25, 6);
+                ctx.fillStyle = '#654321';
+                ctx.fillRect(player.size/3 + 25, -2, 10, 4);
+            }
+            ctx.restore();
+            
+            ctx.restore();
+            
+            // Boss HP bars on HUD (top center) - show all bosses
+            if (gameState.bossActive && bosses.length > 0) {
+                const barWidth = 300;
+                const barHeight = 20;
+                const barSpacing = 30;
+                
+                for (let i = 0; i < bosses.length; i++) {
+                    const boss = bosses[i];
+                    const barX = canvas.width / 2 - barWidth / 2;
+                    const barY = 20 + (i * barSpacing);
+                    const bossHp = Math.max(0, boss.health / boss.maxHealth);
+                    
+                    ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+                    ctx.fillRect(barX - 5, barY - 5, barWidth + 10, barHeight + 10);
+                    ctx.fillStyle = '#f00';
+                    ctx.fillRect(barX, barY, barWidth, barHeight);
+                    ctx.fillStyle = '#0f0';
+                    ctx.fillRect(barX, barY, barWidth * bossHp, barHeight);
+                    ctx.strokeStyle = '#fff';
+                    ctx.lineWidth = 2;
+                    ctx.strokeRect(barX, barY, barWidth, barHeight);
+                    
+                    ctx.fillStyle = '#fff';
+                    ctx.font = 'bold 14px Arial';
+                    ctx.textAlign = 'center';
+                    const label = bosses.length > 1 ? `BOSS ${i + 1}` : 'BOSS';
+                    ctx.fillText(label, canvas.width / 2, barY - 10);
+                }
+            }
+            
+            // Crosshair
+            ctx.strokeStyle = '#fff';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.arc(mouse.x, mouse.y, 5, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(mouse.x - 15, mouse.y);
+            ctx.lineTo(mouse.x + 15, mouse.y);
+            ctx.moveTo(mouse.x, mouse.y - 15);
+            ctx.lineTo(mouse.x, mouse.y + 15);
+            ctx.stroke();
+            
+            // Mobile auto-aim indicator
+            if (window.innerWidth <= 768) {
+                try {
+                    const target = findNearestZombie();
+                    if (target && typeof target.x === 'number' && typeof target.y === 'number') {
+                        const screenX = (target.x - camX) * gameState.zoom + canvas.width / 2;
+                        const screenY = (target.y - camY) * gameState.zoom + canvas.height / 2;
+                        
+                        ctx.strokeStyle = '#ff0000';
+                        ctx.lineWidth = 3;
+                        ctx.beginPath();
+                        ctx.arc(screenX, screenY, 40, 0, Math.PI * 2);
+                        ctx.stroke();
+                        
+                        // Crosshair on target
+                        ctx.strokeStyle = '#ff0000';
+                        ctx.lineWidth = 2;
+                        ctx.beginPath();
+                        ctx.moveTo(screenX - 15, screenY);
+                        ctx.lineTo(screenX + 15, screenY);
+                        ctx.moveTo(screenX, screenY - 15);
+                        ctx.lineTo(screenX, screenY + 15);
+                        ctx.stroke();
+                    }
+                } catch (err) {
+                    // Silently fail if target indicator has issues
+                }
+            }
+        }
+
+        function shoot() {
+            if (gameState.playerAmmo <= 0) return;
+            const now = Date.now();
+            if (now - gameState.lastShotTime < CONFIG.SHOTGUN_FIRE_RATE) return;
+            
+            gameState.playerAmmo--;
+            gameState.lastShotTime = now;
+            playShotgunSound();
+            
+            for (let i = 0; i < CONFIG.SHOTGUN_PELLETS; i++) {
+                const spread = (Math.random() - 0.5) * CONFIG.SHOTGUN_SPREAD;
+                const angle = player.angle + spread;
+                const ex = player.x + Math.cos(angle) * CONFIG.SHOTGUN_RANGE;
+                const ey = player.y + Math.sin(angle) * CONFIG.SHOTGUN_RANGE;
+                bulletTraces.push({start: {x: player.x, y: player.y}, end: {x: ex, y: ey}, life: 1});
+                
+                // Check all bosses
+                if (gameState.bossActive) {
+                    for (const boss of bosses) {
+                        const ldx = ex - player.x, ldy = ey - player.y;
+                        const ll = Math.sqrt(ldx*ldx + ldy*ldy);
+                        const lux = ldx/ll, luy = ldy/ll;
+                        const tcx = boss.x - player.x, tcy = boss.y - player.y;
+                        const proj = tcx*lux + tcy*luy;
+                        const clamp = Math.max(0, Math.min(ll, proj));
+                        const cpx = player.x + clamp*lux, cpy = player.y + clamp*luy;
+                        const dx = boss.x - cpx, dy = boss.y - cpy;
+                        const dist = Math.sqrt(dx*dx + dy*dy);
+                        if (dist <= boss.size/2) {
+                            boss.health -= CONFIG.SHOTGUN_DAMAGE;
+                            bloodSplatters.push({x: cpx, y: cpy, size: 8 + Math.random() * 12, alpha: 1});
+                        }
+                    }
+                }
+                
+                // Check zombie hits
+                for (const z of zombies) {
+                    const ldx = ex - player.x, ldy = ey - player.y;
+                    const ll = Math.sqrt(ldx*ldx + ldy*ldy);
+                    const lux = ldx/ll, luy = ldy/ll;
+                    const tcx = z.x - player.x, tcy = z.y - player.y;
+                    const proj = tcx*lux + tcy*luy;
+                    const clamp = Math.max(0, Math.min(ll, proj));
+                    const cpx = player.x + clamp*lux, cpy = player.y + clamp*luy;
+                    const dx = z.x - cpx, dy = z.y - cpy;
+                    const dist = Math.sqrt(dx*dx + dy*dy);
+                    if (dist <= z.size/2) {
+                        z.health -= CONFIG.SHOTGUN_DAMAGE;
+                        bloodSplatters.push({x: cpx, y: cpy, size: 5 + Math.random() * 10, alpha: 1});
+                    }
+                }
+            }
+            updateHUD();
+        }
+
+        function findNearestZombie() {
+            if (!zombies || !Array.isArray(zombies)) return null;
+            
+            let nearest = null;
+            let minDist = Infinity;
+            
+            // Check all zombies
+            for (const z of zombies) {
+                if (!z || typeof z.x !== 'number' || typeof z.y !== 'number') continue;
+                
+                const dx = z.x - player.x;
+                const dy = z.y - player.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                
+                if (dist < minDist && dist < CONFIG.SHOTGUN_RANGE * 2) {
+                    minDist = dist;
+                    nearest = z;
+                }
+            }
+            
+            // Check all bosses
+            if (gameState.bossActive && bosses && Array.isArray(bosses)) {
+                for (const boss of bosses) {
+                    if (!boss || typeof boss.x !== 'number' || typeof boss.y !== 'number') continue;
+                    
+                    const dx = boss.x - player.x;
+                    const dy = boss.y - player.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (dist < minDist && dist < CONFIG.SHOTGUN_RANGE * 2) {
+                        minDist = dist;
+                        nearest = boss;
+                    }
+                }
+            }
+            
+            return nearest;
+        }
+
+        function autoAimAndShoot() {
+            try {
+                const target = findNearestZombie();
+                if (target && typeof target.x === 'number' && typeof target.y === 'number') {
+                    const dx = target.x - player.x;
+                    const dy = target.y - player.y;
+                    player.angle = Math.atan2(dy, dx);
+                }
+                shoot();
+            } catch (err) {
+                console.error('Auto-aim error:', err);
+                shoot(); // Shoot anyway even if auto-aim fails
+            }
+        }
+
+        function playShotgunSound() {
+            try {
+                const ac = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ac.createOscillator(), gain = ac.createGain();
+                osc.connect(gain);
+                gain.connect(ac.destination);
+                osc.frequency.setValueAtTime(120, ac.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(40, ac.currentTime + 0.3);
+                gain.gain.setValueAtTime(0.3, ac.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ac.currentTime + 0.3);
+                osc.start(ac.currentTime);
+                osc.stop(ac.currentTime + 0.3);
+            } catch(e) {}
+        }
+
+        function updateHUD() {
+            document.getElementById('stage').textContent = gameState.stage;
+            document.getElementById('zombies-left').textContent = gameState.zombiesLeft;
+            document.getElementById('zombies-killed').textContent = gameState.zombiesKilled;
+            document.getElementById('ammo-count').textContent = gameState.playerAmmo;
+            document.getElementById('start-stage').textContent = gameState.stage;
+            document.getElementById('start-zombies').textContent = CONFIG.ZOMBIES_PER_STAGE[gameState.stage - 1];
+        }
+
+        function updateLivesDisplay() {
+            const hearts = document.querySelectorAll('.life-heart');
+            hearts.forEach((h, i) => {
+                if (i < gameState.playerLives) h.classList.remove('empty');
+                else h.classList.add('empty');
+            });
+        }
+
+        function completeStage() {
+            gameState.stageComplete = true;
+            gameState.gameRunning = false;
+            stopStageMusic();
+            document.getElementById('completed-stage').textContent = gameState.stage;
+            document.getElementById('completed-kills').textContent = gameState.zombiesKilled;
+            document.getElementById('completed-ammo').textContent = gameState.totalAmmoCollected;
+            if (gameState.stage < CONFIG.TOTAL_STAGES) {
+                document.getElementById('next-stage-zombies').textContent = CONFIG.ZOMBIES_PER_STAGE[gameState.stage];
+            } else {
+                document.getElementById('next-stage-zombies').textContent = "ALL DONE!";
+            }
+            document.getElementById('stage-complete-screen').classList.remove('hidden');
+        }
+
+        function nextStage() {
+            gameState.stage++;
+            if (gameState.stage > CONFIG.TOTAL_STAGES) {
+                alert("You won all 10 stages!");
+                restartGame();
+                return;
+            }
+            
+            // Award one extra life for completing stage (max 5 lives)
+            if (gameState.playerLives < 5) {
+                gameState.playerLives++;
+            }
+            
+            // Hide stage complete screen
+            document.getElementById('stage-complete-screen').classList.add('hidden');
+            
+            // Play cutscene for stages 2-5, otherwise start immediately
+            if (gameState.stage >= 2 && gameState.stage <= 5) {
+                playCutscene('stage', gameState.stage);
+            } else {
+                // No cutscene for stages 6-10, start immediately
+                startStageDirectly();
+            }
+            
+            // Save progress
+            saveGame();
+        }
+        
+        function startStageDirectly() {
+            // Setup stage without cutscene
+            gameState.zombiesLeft = CONFIG.ZOMBIES_PER_STAGE[gameState.stage - 1];
+            gameState.zombiesKilled = 0;
+            zombies.length = 0;
+            ammoPacks.length = 0;
+            bulletTraces.length = 0;
+            bloodSplatters.length = 0;
+            bosses.length = 0;
+            gameState.bossActive = false;
+            gameState.bossPlayedSound = false;
+            
+            spawnInitialZombies();
+            spawnHiddenAmmo();
+            spawnBoss();  // Spawn boss(es) on every stage
+            
+            gameState.stageComplete = false;
+            gameState.gameRunning = true;
+            updateLivesDisplay();
+            
+            // Play new stage music
+            playStageMusic(gameState.stage);
+        }
+
+        function gameOver() {
+            gameState.gameOver = true;
+            gameState.gameRunning = false;
+            stopStageMusic();
+            document.getElementById('final-stage').textContent = gameState.stage;
+            document.getElementById('final-kills').textContent = gameState.zombiesKilled;
+            document.getElementById('final-ammo').textContent = gameState.totalAmmoCollected;
+            document.getElementById('game-over-screen').classList.remove('hidden');
+        }
+
+        function applyDifficulty(difficulty) {
+            gameState.difficulty = difficulty;
+            const preset = DIFFICULTY_PRESETS[difficulty];
+            
+            // Apply difficulty settings
+            CONFIG.ZOMBIE_SPEED_MIN = preset.ZOMBIE_SPEED_MIN;
+            CONFIG.ZOMBIE_SPEED_MAX = preset.ZOMBIE_SPEED_MAX;
+            CONFIG.BOSS_SPEED = preset.BOSS_SPEED;
+            ACID_CONFIG.RANGE = preset.ACID_RANGE;
+            CONFIG.STARTING_LIVES = preset.STARTING_LIVES;
+            
+            // Update lives display
+            gameState.playerLives = preset.STARTING_LIVES;
+        }
+        
+        function restartGame() {
+            stopStageMusic();
+            clearSave();  // Clear save on restart
+            gameState = {
+                stage: 1,
+                zombiesKilled: 0,
+                zombiesLeft: CONFIG.ZOMBIES_PER_STAGE[0],
+                playerLives: CONFIG.STARTING_LIVES,
+                playerAmmo: CONFIG.STARTING_AMMO,
+                totalAmmoCollected: 0,
+                gameRunning: false,
+                gameOver: false,
+                stageComplete: false,
+                lastShotTime: 0,
+                lastHitTime: 0,
+                zoom: CONFIG.DEFAULT_ZOOM,
+                isInvincible: false,
+                bossActive: false,
+                bossPlayedSound: false,
+                isPaused: false
+            };
+            player.x = CONFIG.CANVAS_WIDTH / 2;
+            player.y = CONFIG.CANVAS_HEIGHT / 2;
+            zombies.length = 0;
+            ammoPacks.length = 0;
+            bulletTraces.length = 0;
+            bloodSplatters.length = 0;
+            bosses.length = 0;
+            
+            initBuildings();
+            spawnInitialZombies();
+            spawnHiddenAmmo();
+            spawnBoss();
+            
+            document.getElementById('game-over-screen').classList.add('hidden');
+            document.getElementById('stage-complete-screen').classList.add('hidden');
+            document.getElementById('pause-screen').classList.add('hidden');
+            document.getElementById('start-screen').classList.remove('hidden');
+            updateHUD();
+            updateLivesDisplay();
+        }
+
+        window.addEventListener('load', initGame);
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
         });
     </script>
 </body>
