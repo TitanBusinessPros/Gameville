@@ -17,7 +17,7 @@
     <title>Gameville - Free Online Games</title>
     
     <!-- ✅ PWA Manifest File -->
-    <link rel="manifest" href="/manifest.json">
+    <<link rel="manifest" href="/Gameville/manifest.json">">
     
     <!-- Preload critical resources -->
     <link rel="preload" href="https://github.com/TitanBusinessPros/Gameville/raw/main/Gameville-logo-1.png" as="image">
@@ -1148,5 +1148,17 @@
             }
         });
     </script>
+
+    <!-- ✅ Service Worker Registration -->
+    <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/Gameville/service-worker.js')
+        .then(() => console.log('Service Worker Registered'))
+        .catch(err => console.log('Service Worker Registration Failed:', err));
+    }
+    </script>
+
 </body>
 </html>
+
+
